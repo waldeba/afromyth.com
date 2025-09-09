@@ -11,6 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Rammetto+One&family=Roboto:wght@700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
     
     <style>
         :root {
@@ -407,45 +408,16 @@
             margin: 0 auto;
         }
 
-        footer {
-            background: #f9f9f9;
-            border-top: 1px solid var(--border);
-            margin-top: 3rem;
+        .rammetto-font {
+            font-family: 'Rammetto One', cursive;
         }
 
-        footer .footer-content {
-            padding: 3rem 0 2rem;
-            text-align: center;
-        }
-
-        footer .footer-links {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
-
-        footer .footer-links a {
-            position: relative;
-            color: #666;
-            text-decoration: none;
-            font-family: var(--font-nav);
-            font-size: 0.74rem;
-            font-weight: 400;
-            text-transform: uppercase;
-            letter-spacing: 0.11em;
-            white-space: nowrap;
-            padding-bottom: 4px;
-            transition: opacity 0.2s ease;
-        }
-
-        footer .footer-links a:hover {
-            opacity: 0.85;
+        footer nav a:hover {
+            opacity: .85;
             color: #333 !important;
         }
 
-        footer .footer-links a::after {
+        footer nav a::after {
             content: '';
             position: absolute;
             left: 0;
@@ -453,41 +425,16 @@
             height: var(--hover-line-h);
             width: 0;
             background: #666;
-            transition: width 0.18s ease;
+            transition: width .18s ease;
         }
 
-        footer .footer-links a:hover::after {
+        footer nav a:hover::after {
             width: 100%;
-        }
-
-        footer .payment-icons {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 1rem;
-            margin: 1.5rem 0;
-        }
-
-        footer .payment-icons img {
-            height: 3rem;
-        }
-
-        footer .copyright {
-            font-size: 0.975rem;
-            color: #666;
         }
 
         @media (max-width: 768px) {
             .footer-padding {
                 padding: 0 0.5775rem;
-            }
-
-            footer .footer-links {
-                gap: 1rem;
-            }
-
-            footer .footer-links a {
-                font-size: 0.7rem;
             }
         }
     </style>
@@ -605,22 +552,40 @@
     </main>
 
     <!-- Footer -->
-    <footer>
-        <div class="footer-padding">
-            <div class="footer-inner">
-                <div class="footer-content">
-                    <div class="footer-links">
-                        <a href="help-faq.html">HELP & FAQ</a>
-                        <a href="about-us.html">ABOUT US</a>
-                        <a href="contact-us.html">CONTACT US</a>
-                        <a href="terms-and-conditions.html">TERMS & CONDITIONS</a>
-                        <a href="privacy-policy.html">PRIVACY POLICY</a>
+    <footer class="bg-white text-gray-700 footer-padding">
+        <div class="border-t-2 border-gray-200"></div>
+        <div class="footer-inner">
+            <div class="py-10">
+                <div class="flex flex-col lg:flex-row lg:items-start lg:justify-between space-y-5 lg:space-y-0">
+                    <div class="lg:flex-1">
+                        <h2 class="font-bold uppercase tracking-widest text-sm">
+                            <span class="rammetto-font font-normal lowercase tracking-normal" style="color:#000;font-size:.867rem">afromyth</span> – THE LONG THREAD HOME.
+                        </h2>
                     </div>
-                    <div class="payment-icons">
-                        <img src="images/payments/logo-stripe.png" alt="Stripe">
-                        <img src="images/payments/Paypal.png" alt="PayPal">
+                    <div class="lg:flex-1 flex justify-center">
+                        <nav class="flex justify-center">
+                            <div class="flex flex-row items-center space-x-3" style="font-family:var(--font-nav);font-size:.74rem;font-weight:400;text-transform:uppercase;letter-spacing:.11em;white-space:nowrap;color:#666">
+                                <a href="help-faq.html" class="hover:underline" style="color:#666;text-decoration:none;position:relative;padding-bottom:4px;transition:opacity .2s ease">HELP & FAQ</a>
+                                <span class="text-gray-400">|</span>
+                                <a href="about-us.html" class="hover:underline" style="color:#666;text-decoration:none;position:relative;padding-bottom:4px;transition:opacity .2s ease">ABOUT US</a>
+                                <span class="text-gray-400">|</span>
+                                <a href="contact-us.html" class="hover:underline" style="color:#666;text-decoration:none;position:relative;padding-bottom:4px;transition:opacity .2s ease">CONTACT US</a>
+                                <span class="text-gray-400">|</span>
+                                <a href="terms-and-conditions.html" class="hover:underline" style="color:#666;text-decoration:none;position:relative;padding-bottom:4px;transition:opacity .2s ease">TERMS & CONDITIONS</a>
+                                <span class="text-gray-400">|</span>
+                                <a href="privacy-policy.html" class="hover:underline" style="color:#666;text-decoration:none;position:relative;padding-bottom:4px;transition:opacity .2s ease">PRIVACY POLICY</a>
+                            </div>
+                        </nav>
                     </div>
-                    <div class="copyright">
+                </div>
+                <div class="mt-1 flex justify-start lg:justify-end lg:pr-10">
+                    <div class="flex items-center space-x-1">
+                        <img src="images/payments/logo-stripe.png" alt="Stripe" class="h-12">
+                        <img src="images/payments/Paypal.png" alt="PayPal" class="h-12">
+                    </div>
+                </div>
+                <div class="mt-4 flex justify-center">
+                    <div class="text-gray-500" style="font-size:.975rem">
                         <span>© 2025 AFROMYTH</span>
                     </div>
                 </div>
