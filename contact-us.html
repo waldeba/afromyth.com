@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - AFROMYTH</title>
+    <meta name="description" content="Get in touch with AFROMYTH for inquiries about handcrafted African artisan pieces, custom orders, and more.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rammetto+One&family=Roboto:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --font-logo: 'Rammetto One', cursive;
+            --font-nav: 'Roboto', sans-serif;
+            --font-sans: 'Poppins', sans-serif;
+            --color-dark: #1a1a1a;
+            --logo-color: rgb(184,115,51);
+            --border: #e5e5e5;
+            --gap: 1.4rem;
+            --icon-size: 28.6px;
+            --hover-line: #1a1a1a;
+            --hover-line-h: 2px;
+            --icons-right: 140px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            color: var(--color-dark);
+            line-height: 1.6;
+            background: #fff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            padding: 1.32rem 1.5rem 0;
+        }
+
+        .header-inner {
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .logo-row {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 0.9rem;
+        }
+
+        #logo {
+            font-family: var(--font-logo);
+            color: #000;
+            letter-spacing: 0.0165em;
+            font-size: 1.71rem;
+            text-transform: lowercase;
+            font-weight: 400;
+            line-height: 1;
+        }
+
+        #logo a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .logo-icons {
+            position: absolute;
+            right: var(--icons-right);
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            gap: 18px;
+            align-items: center;
+        }
+
+        .icon-btn {
+            width: var(--icon-size);
+            height: var(--icon-size);
+            background: none;
+            border: none;
+            padding: 0;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .icon-btn img {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+        .icon-btn:hover {
+            opacity: 0.65;
+        }
+
+        .links-bar {
+            border-bottom: 1px solid var(--border);
+            position: relative;
+            padding-bottom: 0.55rem;
+            margin-bottom: 0.55rem;
+        }
+
+        nav.desktop-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: var(--gap);
+            font-family: var(--font-nav);
+            font-size: 0.74rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.11em;
+            position: relative;
+        }
+
+        nav.desktop-links a {
+            position: relative;
+            color: var(--color-dark);
+            text-decoration: none;
+            white-space: nowrap;
+            padding-bottom: 4px;
+            transition: opacity 0.2s ease;
+        }
+
+        nav.desktop-links a:hover {
+            opacity: 0.85;
+        }
+
+        nav.desktop-links a::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -1px;
+            height: var(--hover-line-h);
+            width: 0;
+            background: var(--hover-line);
+            transition: width 0.18s ease;
+        }
+
+        nav.desktop-links a:hover::after {
+            width: 100%;
+        }
+
+        main {
+            flex: 1;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem;
+            width: 100%;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .page-header h1 {
+            font-family: var(--font-nav);
+            font-size: 2.25rem;
+            font-weight: 700;
+            color: var(--color-dark);
+            margin-bottom: 0;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .contact-container {
+            max-width: 1248px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .contact-form {
+            background: #fff;
+        }
+
+        .contact-form h2 {
+            font-family: var(--font-nav);
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 2rem;
+            color: var(--color-dark);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-family: var(--font-nav);
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 0.5rem;
+            color: var(--color-dark);
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            font-family: var(--font-sans);
+            font-size: 0.9rem;
+            color: var(--color-dark);
+            background: #fff;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--color-dark);
+        }
+
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            background: var(--color-dark);
+            color: #fff;
+            font-family: var(--font-nav);
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .submit-btn:hover {
+            background: #333;
+            transform: translateY(-1px);
+        }
+
+        .contact-info {
+            background: #f9f9f9;
+            padding: 2rem;
+            border-radius: 8px;
+        }
+
+        .contact-info h2 {
+            font-family: var(--font-nav);
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 2rem;
+            color: var(--color-dark);
+        }
+
+        .contact-details {
+            margin-bottom: 2rem;
+        }
+
+        .contact-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-item h4 {
+            font-family: var(--font-nav);
+            font-size: 0.9rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5rem;
+            color: var(--color-dark);
+        }
+
+        .contact-item p {
+            color: #666;
+            font-weight: 300;
+            line-height: 1.6;
+        }
+
+        .contact-item a {
+            color: var(--color-dark);
+            text-decoration: none;
+            font-weight: 400;
+        }
+
+        .contact-item a:hover {
+            opacity: 0.7;
+        }
+
+        .business-hours {
+            background: #fff;
+            padding: 1.5rem;
+            border-radius: 6px;
+            border: 1px solid var(--border);
+        }
+
+        .business-hours h4 {
+            font-family: var(--font-nav);
+            font-size: 0.9rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 1rem;
+            color: var(--color-dark);
+        }
+
+        .hours-list {
+            list-style: none;
+        }
+
+        .hours-list li {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+            color: #666;
+            font-size: 0.85rem;
+        }
+
+        /* Mobile Styles */
+        @media (max-width: 768px) {
+            nav.desktop-links {
+                display: none;
+            }
+
+            #logo {
+                font-size: 1.49rem;
+            }
+
+            .logo-icons {
+                right: 12px;
+                gap: 14px;
+            }
+
+            main {
+                padding: 2rem 1rem;
+            }
+
+            .page-header h1 {
+                font-size: 2rem;
+            }
+
+            .contact-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .contact-form h2,
+            .contact-info h2 {
+                font-size: 1.3rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header {
+                padding: 1rem 0.5rem 0.6rem;
+            }
+
+            #logo {
+                font-size: 1.31rem;
+            }
+
+            main {
+                padding: 1.5rem 0.75rem;
+            }
+
+            .page-header h1 {
+                font-size: 1.8rem;
+            }
+
+            .contact-info {
+                padding: 1.5rem;
+            }
+        }
+
+        /* Footer Styles */
+        .footer-padding {
+            padding: 0 1.7325rem;
+        }
+
+        .footer-inner {
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        footer {
+            background: #f9f9f9;
+            border-top: 1px solid var(--border);
+            margin-top: 3rem;
+        }
+
+        footer .footer-content {
+            padding: 3rem 0 2rem;
+            text-align: center;
+        }
+
+        footer .footer-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        footer .footer-links a {
+            position: relative;
+            color: #666;
+            text-decoration: none;
+            font-family: var(--font-nav);
+            font-size: 0.74rem;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0.11em;
+            white-space: nowrap;
+            padding-bottom: 4px;
+            transition: opacity 0.2s ease;
+        }
+
+        footer .footer-links a:hover {
+            opacity: 0.85;
+            color: #333 !important;
+        }
+
+        footer .footer-links a::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -1px;
+            height: var(--hover-line-h);
+            width: 0;
+            background: #666;
+            transition: width 0.18s ease;
+        }
+
+        footer .footer-links a:hover::after {
+            width: 100%;
+        }
+
+        footer .payment-icons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        footer .payment-icons img {
+            height: 3rem;
+        }
+
+        footer .copyright {
+            font-size: 0.975rem;
+            color: #666;
+        }
+
+        @media (max-width: 768px) {
+            .footer-padding {
+                padding: 0 0.5775rem;
+            }
+
+            footer .footer-links {
+                gap: 1rem;
+            }
+
+            footer .footer-links a {
+                font-size: 0.7rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-inner">
+            <div class="logo-row">
+                <h1 id="logo">
+                    <a href="index.html">afromyth</a>
+                </h1>
+                <div class="logo-icons">
+                    <button class="icon-btn" aria-label="Search">
+                        <img src="images/s3_search.svg" alt="Search icon">
+                    </button>
+                    <button class="icon-btn" aria-label="Cart">
+                        <img src="images/c2_bag.svg" alt="Cart icon">
+                    </button>
+                </div>
+            </div>
+            <div class="links-bar">
+                <nav class="desktop-links">
+                    <a href="masks-statues-carvings/">MASKS + STATUES + CARVINGS</a>
+                    <a href="ethiopian-orthodox-crosses/">ETHIOPIAN ORTHODOX CROSSES</a>
+                    <a href="apparel-textiles-jewelry/">APPAREL + TEXTILES + JEWELRY</a>
+                    <a href="books-icons-manuscripts/">BOOKS + ICONS + MANUSCRIPTS</a>
+                    <a href="tokens-medals-pins/">TOKENS + MEDALS + PINS</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <div class="page-header">
+            <h1>Contact Us</h1>
+        </div>
+
+        <div class="contact-container">
+            <!-- Contact Form -->
+            <div class="contact-form">
+                <h2>Send us a Message</h2>
+                <form id="contactForm" action="#" method="post">
+                    <div class="form-group">
+                        <label for="fullName">Full Name</label>
+                        <input type="text" id="fullName" name="fullName" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" placeholder="Tell us about your inquiry, custom order request, or any questions about our artisan pieces..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+
+            <!-- Contact Information -->
+            <div class="contact-info">
+                <h2>Get in Touch</h2>
+                
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <h4>General Enquiries</h4>
+                        <p><a href="mailto:hello@afromyth.com">hello@afromyth.com</a></p>
+                    </div>
+
+                    <div class="contact-item">
+                        <h4>Orders & Shipping</h4>
+                        <p><a href="mailto:orders@afromyth.com">orders@afromyth.com</a></p>
+                    </div>
+
+                    <div class="contact-item">
+                        <h4>Returns & Exchanges</h4>
+                        <p><a href="mailto:returns@afromyth.com">returns@afromyth.com</a></p>
+                    </div>
+
+                    <div class="contact-item">
+                        <h4>Telephone</h4>
+                        <p><a href="tel:+442071234567">+44 20 7123 4567</a></p>
+                    </div>
+
+                    <div class="contact-item">
+                        <h4>Studio Location</h4>
+                        <p>London, United Kingdom<br>
+                        <em>Collection by appointment only</em></p>
+                    </div>
+                </div>
+
+                <div class="business-hours">
+                    <h4>Customer Service Hours</h4>
+                    <ul class="hours-list">
+                        <li><span>Monday - Friday</span><span>9:00 AM - 6:00 PM GMT</span></li>
+                        <li><span>Saturday</span><span>10:00 AM - 4:00 PM GMT</span></li>
+                        <li><span>Sunday</span><span>Closed</span></li>
+                    </ul>
+                    <p style="margin-top: 1rem; color: #666; font-size: 0.85rem; line-height: 1.5;">
+                        <strong>Response Time:</strong> We aim to respond to all inquiries within 24 hours during business days.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-padding">
+            <div class="footer-inner">
+                <div class="footer-content">
+                    <div class="footer-links">
+                        <a href="help-faq.html">HELP & FAQ</a>
+                        <a href="about-us.html">ABOUT US</a>
+                        <a href="contact-us.html">CONTACT US</a>
+                        <a href="terms-and-conditions.html">TERMS & CONDITIONS</a>
+                        <a href="privacy-policy.html">PRIVACY POLICY</a>
+                    </div>
+                    <div class="payment-icons">
+                        <img src="images/payments/logo-stripe.png" alt="Stripe">
+                        <img src="images/payments/Paypal.png" alt="PayPal">
+                    </div>
+                    <div class="copyright">
+                        <span>© 2025 AFROMYTH</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Form Handling -->
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(this);
+            const fullName = formData.get('fullName');
+            const email = formData.get('email');
+            const subject = formData.get('subject');
+            const message = formData.get('message');
+            
+            // Simple validation
+            if (!fullName || !email || !subject || !message) {
+                alert('Please fill in all required fields.');
+                return;
+            }
+            
+            // Email validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                alert('Please enter a valid email address.');
+                return;
+            }
+            
+            // Simulate form submission
+            const submitBtn = this.querySelector('.submit-btn');
+            const originalText = submitBtn.textContent;
+            
+            submitBtn.textContent = 'SENDING...';
+            submitBtn.disabled = true;
+            
+            // Simulate API call delay
+            setTimeout(() => {
+                alert('Thank you for your message! We will get back to you within 24 hours.');
+                this.reset();
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+            }, 2000);
+        });
+        
+        // Form field focus effects
+        document.querySelectorAll('.form-group input, .form-group textarea').forEach(field => {
+            field.addEventListener('focus', function() {
+                this.parentElement.querySelector('label').style.color = 'var(--color-dark)';
+            });
+            
+            field.addEventListener('blur', function() {
+                if (!this.value) {
+                    this.parentElement.querySelector('label').style.color = '#666';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
