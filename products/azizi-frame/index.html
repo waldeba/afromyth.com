@@ -12,6 +12,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet"/>
     
+    <script src="https://cdn.tailwindcss.com"></script>
+    
     <style>
         :root {
             --font-logo: 'Rammetto One', cursive;
@@ -180,26 +182,113 @@
 
         .gallery {
             flex: 1;
+            margin-right: 2rem;
+        }
+
+        .gallery-images {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(2, 1fr);
             gap: 1rem;
-            align-content: start;
+            margin-bottom: 2rem;
         }
 
         .gallery-img {
             width: 100%;
+            height: auto;
             aspect-ratio: 1;
             object-fit: cover;
             border-radius: 4px;
             cursor: pointer;
-            transition: opacity 0.2s ease;
+            transition: opacity 0.2s;
         }
 
         .gallery-img:hover {
             opacity: 0.9;
         }
 
-        .product-info {
+        /* Delivery & Returns Section */
+        .delivery-returns {
+            margin-top: 2rem;
+        }
+
+        .delivery-returns-header {
+            font-family: var(--font-sans);
+            font-weight: 300;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            padding: 1rem 0;
+            border-top: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            cursor: pointer;
+            font-size: 0.8rem;
+            color: var(--color-muted);
+            transition: color 0.2s;
+        }
+
+        .delivery-returns-header:hover {
+            color: var(--color-dark);
+        }
+
+        .delivery-returns-header span:last-child {
+            font-weight: 700;
+            font-size: 1rem;
+            color: var(--color-dark);
+            transition: transform 0.3s ease;
+        }
+
+        .delivery-returns-header.active span:last-child {
+            transform: rotate(45deg);
+        }
+
+        .delivery-returns-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            color: var(--color-muted);
+            font-size: 0.85rem;
+            line-height: 1.5;
+            padding: 0 0.25rem;
+        }
+
+        .delivery-returns-content.open {
+            max-height: 800px;
+            padding-top: 1rem;
+        }
+
+        .delivery-returns-content h4 {
+            font-family: var(--font-serif);
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin: 1rem 0 0.5rem 0;
+            color: var(--color-dark);
+            font-weight: 600;
+        }
+
+        .delivery-returns-content h4:first-child {
+            margin-top: 0;
+        }
+
+        .delivery-returns-content p {
+            margin-bottom: 0.75rem;
+            color: var(--color-muted);
+            font-family: var(--font-sans);
+            font-weight: 400;
+        }
+
+        .delivery-returns-content ul {
+            margin-bottom: 1rem;
+            padding-left: 1rem;
+            font-family: var(--font-sans);
+            font-weight: 400;
+        }
+
+        .delivery-returns-content li {
+            margin-bottom: 0.25rem;
+            color: var(--color-muted);
+            list-style-type: disc;
+        }        .product-info {
             flex: 0 0 400px;
             position: sticky;
             top: 2rem;
@@ -431,6 +520,10 @@
                 grid-template-columns: 1fr;
             }
 
+            .gallery-images {
+                grid-template-columns: 1fr;
+            }
+
             .product-title {
                 font-size: 1.4rem;
             }
@@ -454,6 +547,30 @@
                 gap: 1rem;
             }
         }
+
+        /* Footer styles */
+        .footer-padding { padding: 0 1.7325rem; }
+        .footer-inner { max-width: 1280px; margin: 0 auto; }
+        .rammetto-font { font-family: 'Rammetto One', cursive; }
+        
+        /* Footer links hover effects */
+        footer nav a:hover { opacity: .85; color: #333 !important; }
+        footer nav a::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -1px;
+            height: 2px;
+            width: 0;
+            background: #666;
+            transition: width .18s ease;
+        }
+        footer nav a:hover::after { width: 100%; }
+        
+        /* Mobile footer adjustments */
+        @media(max-width:480px) {
+            .footer-padding { padding: 0 0.5775rem; }
+        }
     </style>
 </head>
 <body>
@@ -475,7 +592,11 @@
             </div>
             <div class="links-bar">
                 <nav class="desktop-links">
-                    <!-- Navigation links would go here -->
+                    <a href="/afromyth.com/masks-statues-carvings/">MASKS + STATUES + CARVINGS</a>
+                    <a href="/afromyth.com/ethiopian-orthodox-crosses/">ETHIOPIAN ORTHODOX CROSSES</a>
+                    <a href="/afromyth.com/apparel-textiles-jewelry/">APPAREL + TEXTILES + JEWELRY</a>
+                    <a href="/afromyth.com/books-icons-manuscripts/">BOOKS + ICONS + MANUSCRIPTS</a>
+                    <a href="/afromyth.com/tokens-medals-pins/">TOKENS + MEDALS + PINS</a>
                 </nav>
             </div>
         </div>
@@ -489,10 +610,34 @@
     <!-- Product Page Content -->
     <main class="product-page">
         <div class="gallery">
-            <img src="https://picsum.photos/seed/frame1/800/800" alt="Azizi 5x7 Standing Frame - Main View" class="gallery-img"/>
-            <img src="https://picsum.photos/seed/frame1a/800/800" alt="Azizi 5x7 Standing Frame - Detail View" class="gallery-img"/>
-            <img src="https://picsum.photos/seed/frame1b/800/800" alt="Azizi 5x7 Standing Frame - Side View" class="gallery-img"/>
-            <img src="https://picsum.photos/seed/frame1c/800/800" alt="Azizi 5x7 Standing Frame - Back View" class="gallery-img"/>
+            <div class="gallery-images">
+                <img src="https://picsum.photos/seed/frame1/800/800" alt="Azizi 5x7 Standing Frame - Main View" class="gallery-img"/>
+                <img src="https://picsum.photos/seed/frame1a/800/800" alt="Azizi 5x7 Standing Frame - Detail View" class="gallery-img"/>
+                <img src="https://picsum.photos/seed/frame1b/800/800" alt="Azizi 5x7 Standing Frame - Side View" class="gallery-img"/>
+                <img src="https://picsum.photos/seed/frame1c/800/800" alt="Azizi 5x7 Standing Frame - Back View" class="gallery-img"/>
+            </div>
+
+            <!-- Delivery & Return Section -->
+            <div class="delivery-returns">
+                <div class="delivery-returns-header" onclick="toggleDeliveryReturns(this)">
+                    <span>D E L I V E R Y &nbsp; &amp; &nbsp; R E T U R N</span>
+                    <span>+</span>
+                </div>
+                <div class="delivery-returns-content">
+                    <p>We aim to dispatch your order within 24/48h Monday - Friday*.</p>
+                    <h4>UK Mainland / Collection</h4>
+                    <ul>
+                        <li>FREE Standard Delivery over £150*</li>
+                        <li>Standard Delivery (3 - 5 working days) £5.95*</li>
+                        <li>Expedited Delivery (2 - 3 working days) £8.50*</li>
+                    </ul>
+                    <p>Collect FREE from AFROMYTH Studio</p>
+                    <h4>International Orders</h4>
+                    <p>International Orders please contact us.</p>
+                    <h4>Returns</h4>
+                    <p>Should you change your mind about an item, we are happy to offer an exchange or a refund. All we ask is that you return the item to us in an unused state and in its original packaging within 14 days of receipt.</p>
+                </div>
+            </div>
         </div>
 
         <div class="product-info">
@@ -598,6 +743,20 @@
             // Here you would integrate with your cart system
         }
 
+        function toggleDeliveryReturns(header) {
+            const content = header.nextElementSibling;
+            const symbol = header.querySelector('span:last-child');
+            
+            content.classList.toggle('open');
+            header.classList.toggle('active');
+            
+            if (content.classList.contains('open')) {
+                symbol.textContent = '×';
+            } else {
+                symbol.textContent = '+';
+            }
+        }
+
         // Gallery image click functionality
         document.querySelectorAll('.gallery-img').forEach(img => {
             img.addEventListener('click', function() {
@@ -605,6 +764,73 @@
                 console.log('Gallery image clicked:', this.alt);
             });
         });
+    </script>
+
+    <!-- Footer Section -->
+    <footer class="bg-white text-gray-700 footer-padding">
+        <div class="border-t-2 border-gray-200"></div>
+        <div class="footer-inner">
+            <div class="py-10">
+                <div class="flex flex-col lg:flex-row lg:items-start lg:justify-between space-y-5 lg:space-y-0">
+                    <div class="lg:flex-1">
+                        <h2 class="font-bold uppercase tracking-widest text-sm">
+                            <span class="rammetto-font font-normal lowercase tracking-normal" style="color:#000;font-size:.867rem">afromyth</span> – LIVE INTENTIONALLY.
+                        </h2>
+                        <p class="mt-2" style="font-size:.967rem;max-width:80%">
+                            Independent Homeware Brand | Handmade, reclaimed and worldwide decorative pieces. <a href="/about/" class="hover:underline">more.....</a>
+                        </p>
+                    </div>
+                    <div class="lg:flex-1 flex justify-center">
+                        <nav class="flex justify-center">
+                            <div class="flex flex-row items-center space-x-3" style="font-family:var(--font-nav);font-size:.74rem;font-weight:400;text-transform:uppercase;letter-spacing:.11em;white-space:nowrap;color:#666">
+                                <a href="/afromyth/help-faq/" class="hover:underline" style="color:#666;text-decoration:none;position:relative;padding-bottom:4px;transition:opacity .2s ease">HELP & FAQ</a>
+                                <span class="text-gray-400">|</span>
+                                <a href="/afromyth/about-us/" class="hover:underline" style="color:#666;text-decoration:none;position:relative;padding-bottom:4px;transition:opacity .2s ease">ABOUT US</a>
+                                <span class="text-gray-400">|</span>
+                                <a href="/afromyth/contact-us/" class="hover:underline" style="color:#666;text-decoration:none;position:relative;padding-bottom:4px;transition:opacity .2s ease">CONTACT US</a>
+                                <span class="text-gray-400">|</span>
+                                <a href="/afromyth/terms-and-conditions/" class="hover:underline" style="color:#666;text-decoration:none;position:relative;padding-bottom:4px;transition:opacity .2s ease">TERMS & CONDITIONS</a>
+                                <span class="text-gray-400">|</span>
+                                <a href="/afromyth/privacy-policy/" class="hover:underline" style="color:#666;text-decoration:none;position:relative;padding-bottom:4px;transition:opacity .2s ease">PRIVACY POLICY</a>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+                <div class="mt-1 flex justify-start lg:justify-end lg:pr-10">
+                    <div class="flex items-center space-x-1">
+                        <img src="/afromyth/images/payments/logo-stripe.png" alt="Stripe" class="h-12">
+                        <img src="/afromyth/images/payments/Paypal.png" alt="PayPal" class="h-12">
+                    </div>
+                </div>
+                <div class="mt-4 flex justify-center">
+                    <div class="text-gray-500" style="font-size:.975rem">
+                        <span>© 2025 AFROMYTH</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Footer JavaScript -->
+    <script>
+        function toggleCategoryMenu(){
+            const e=document.getElementById("catDropdown");
+            e.classList.toggle("show")
+        }
+        document.addEventListener("click",e=>{
+            const t=document.querySelector(".category-menu");
+            t&&!t.contains(e.target)&&document.getElementById("catDropdown").classList.remove("show")
+        }),
+        document.addEventListener("keydown",e=>{
+            e.key==="Escape"&&(document.getElementById("catDropdown").classList.remove("show"),document.getElementById("searchBar").style.display="none")
+        });
+        function toggleSearch(){
+            const e=document.getElementById("searchBar");
+            if(e.style.display=e.style.display==="none"?"block":"none",e.style.display==="block"){
+                const t=e.querySelector("input");
+                t&&t.focus()
+            }
+        }
     </script>
 </body>
 </html>
