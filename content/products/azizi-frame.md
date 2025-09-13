@@ -2,6 +2,7 @@
 title: "Azizi 5″ x 7″ Standing Frame"
 date: 2025-01-15T10:00:00Z
 draft: false
+url: "/products/azizi-frame/"
 sku: "10017PK2"
 price: "19.95"
 description: "An antiqued effect brass free standing picture frame."

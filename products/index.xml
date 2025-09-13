@@ -2,32 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>AFROMYTH</title>
-    <link>https://afromyth.com/</link>
+    <link>https://afromyth.com/products/</link>
     <description>Recent content on AFROMYTH</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 15 Jan 2025 10:00:00 +0000</lastBuildDate>
-    <atom:link href="https://afromyth.com/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://afromyth.com/products/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Azizi 5″ x 7″ Standing Frame</title>
-      <link>https://afromyth.com/products/azizi-frame/</link>
+      <link>https://afromyth.com/products/azizi-5-x-7-standing-frame/</link>
       <pubDate>Wed, 15 Jan 2025 10:00:00 +0000</pubDate>
-      <guid>https://afromyth.com/products/azizi-frame/</guid>
+      <guid>https://afromyth.com/products/azizi-5-x-7-standing-frame/</guid>
       <description>&lt;p&gt;This is the Azizi 5″ x 7″ Standing Frame product page content. The page uses Hugo&amp;rsquo;s templating system to dynamically populate product information from the front matter above.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title></title>
-      <link>https://afromyth.com/contact-us/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://afromyth.com/contact-us/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title></title>
-      <link>https://afromyth.com/help-faq/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://afromyth.com/help-faq/</guid>
-      <description></description>
     </item>
     <item>
       <title></title>
