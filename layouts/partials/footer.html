@@ -1,0 +1,76 @@
+<footer class="bg-white text-gray-700 footer-padding">
+    <div class="border-t-2 border-gray-200"></div>
+    <div class="footer-inner">
+        <div class="py-10">
+            <!-- Brand and Navigation Row -->
+            <div class="flex flex-col md:flex-row md:items-center md:justify-between space-y-4 md:space-y-0 mb-8">
+                <!-- Brand -->
+                <div class="flex-shrink-0">
+                    <h2 class="font-bold uppercase tracking-widest text-sm">
+                        <span class="rammetto-font font-normal lowercase tracking-normal" style="color:#000;font-size:1.04rem">afromyth.</span> – THE LONG THREAD HOME.
+                    </h2>
+                </div>
+                <!-- Navigation -->
+                <div class="flex-shrink-0">
+                    <nav class="flex justify-start md:justify-end">
+                        <div class="flex flex-col sm:flex-row sm:items-center sm:space-x-3 space-y-2 sm:space-y-0" style="font-family:var(--font-nav);font-size:.74rem;font-weight:400;text-transform:uppercase;letter-spacing:.11em;color:#666">
+                            <a href="{{ relURL "help-faq.html" }}" class="hover:underline" style="color:#666;text-decoration:none;position:relative;padding-bottom:4px;transition:opacity .2s ease">HELP & FAQ</a>
+                            <span class="hidden sm:inline text-gray-400">|</span>
+                            <a href="{{ relURL "about-us.html" }}" class="hover:underline" style="color:#666;text-decoration:none;position:relative;padding-bottom:4px;transition:opacity .2s ease">ABOUT US</a>
+                            <span class="hidden sm:inline text-gray-400">|</span>
+                            <a href="{{ relURL "contact-us.html" }}" class="hover:underline" style="color:#666;text-decoration:none;position:relative;padding-bottom:4px;transition:opacity .2s ease">CONTACT US</a>
+                            <span class="hidden sm:inline text-gray-400">|</span>
+                            <a href="{{ relURL "terms-and-conditions.html" }}" class="hover:underline" style="color:#666;text-decoration:none;position:relative;padding-bottom:4px;transition:opacity .2s ease">TERMS & CONDITIONS</a>
+                            <span class="hidden sm:inline text-gray-400">|</span>
+                            <a href="{{ relURL "privacy-policy.html" }}" class="hover:underline" style="color:#666;text-decoration:none;position:relative;padding-bottom:4px;transition:opacity .2s ease">PRIVACY POLICY</a>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+            <!-- Payment Icons -->
+            <div class="flex justify-start lg:justify-end lg:pr-10 mb-6">
+                <div class="flex items-center">
+                    <img src="{{ relURL "images/payments/payments-50.png" }}" alt="Payment Methods" class="h-12">
+                </div>
+            </div>
+            <!-- Copyright -->
+            <div class="flex justify-center">
+                <div class="text-gray-500" style="font-size:.975rem">
+                    <span>© {{ now.Format "2006" }} AFROMYTH</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+    function toggleCategoryMenu() {
+        const dropdown = document.getElementById("catDropdown");
+        dropdown.classList.toggle("show");
+    }
+    
+    document.addEventListener("click", function(event) {
+        const categoryMenu = document.querySelector(".category-menu");
+        if (categoryMenu && !categoryMenu.contains(event.target)) {
+            document.getElementById("catDropdown").classList.remove("show");
+        }
+    });
+    
+    document.addEventListener("keydown", function(event) {
+        if (event.key === "Escape") {
+            document.getElementById("catDropdown").classList.remove("show");
+            document.getElementById("searchBar").style.display = "none";
+        }
+    });
+    
+    function toggleSearch() {
+        const searchBar = document.getElementById("searchBar");
+        if (searchBar.style.display === "none" || searchBar.style.display === "") {
+            searchBar.style.display = "block";
+            const input = searchBar.querySelector("input");
+            if (input) input.focus();
+        } else {
+            searchBar.style.display = "none";
+        }
+    }
+</script>

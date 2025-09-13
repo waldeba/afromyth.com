@@ -1,0 +1,16 @@
+baseURL = 'https://afromyth.com'
+languageCode = 'en-us'
+title = 'AFROMYTH'
+theme = ''
+
+[params]
+  description = "AFROMYTH - THE LONG THREAD HOME"
+  author = "AFROMYTH"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+[permalinks]
+  products = "/products/:slug/"
