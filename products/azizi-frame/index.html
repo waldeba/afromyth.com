@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Azizi 5" x 7" Standing Frame | AFROMYTH</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Marhey:wght@500&family=Roboto:wght@700&family=Poppins:wght@200;300;400&display=swap" rel="stylesheet"/>
+    
+    <style>
+        :root {
+            --font-logo: 'Marhey', cursive;
+            --font-nav: 'Roboto', sans-serif;
+            --font-sans: 'Poppins', sans-serif;
+            --color-dark: #1a1a1a;
+            --color-muted: #555;
+            --color-accent: #b87333;
+            --border: #e5e5e5;
+            --gap: 1.4rem;
+            --icon-size: 28.6px;
+            --hover-line: #1a1a1a;
+            --hover-line-h: 2px;
+            --icons-right: 140px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            color: var(--color-dark);
+            line-height: 1.6;
+            background: #fff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Header Styles */
+        header {
+            padding: 1.45rem 1.5rem 0;
+            background: #fff;
+        }
+
+        .header-inner {
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .logo-row {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 0.9rem;
+        }
+
+        #logo {
+            font-family: var(--font-logo);
+            font-size: 1.8rem;
+            font-weight: 500;
+            color: #000;
+        }
+
+        #logo a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .logo-icons {
+            position: absolute;
+            right: var(--icons-right);
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            gap: 18px;
+            align-items: center;
+        }
+
+        .icon-btn {
+            width: var(--icon-size);
+            height: var(--icon-size);
+            background: transparent;
+            border: none;
+            padding: 0;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .icon-btn img {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+        .icon-btn:hover {
+            opacity: 0.65;
+        }
+
+        .links-bar {
+            border-bottom: 1px solid var(--border);
+            position: relative;
+            padding-bottom: 0.55rem;
+            margin-bottom: 0.55rem;
+        }
+
+        /* Category Menu */
+        .category-menu {
+            position: relative;
+            display: inline-block;
+        }
+
+        .category-toggle {
+            cursor: pointer;
+            padding: 8px;
+            display: none;
+        }
+
+        .hamburger {
+            width: 20px;
+            height: 15px;
+            position: relative;
+        }
+
+        .hamburger span {
+            display: block;
+            height: 2px;
+            width: 100%;
+            background: var(--color-dark);
+            margin-bottom: 3px;
+            transition: 0.3s;
+        }
+
+        .category-dropdown {
+            display: none;
+            position: absolute;
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            z-index: 1000;
+            min-width: 250px;
+            top: 100%;
+            left: 0;
+        }
+
+        .category-dropdown.show {
+            display: block;
+        }
+
+        .category-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .category-list li {
+            padding: 0;
+        }
+
+        .category-list a {
+            display: block;
+            padding: 12px 16px;
+            color: var(--color-dark);
+            text-decoration: none;
+            font-family: var(--font-nav);
+            font-size: 0.74rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.11em;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .category-list a:hover {
+            background: #f9f9f9;
+        }
+
+        nav.desktop-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: var(--gap);
+            font-family: var(--font-nav);
+            font-size: 0.74rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.11em;
+        }
+
+        nav.desktop-links a {
+            position: relative;
+            color: var(--color-dark);
+            text-decoration: none;
+            white-space: nowrap;
+            padding-bottom: 4px;
+            transition: opacity 0.2s ease;
+        }
+
+        nav.desktop-links a:hover {
+            opacity: 0.85;
+        }
+
+        nav.desktop-links a::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -1px;
+            height: var(--hover-line-h);
+            width: 0;
+            background: var(--hover-line);
+            transition: width 0.18s ease;
+        }
+
+        nav.desktop-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Search Bar */
+        #searchBar {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            padding: 1rem;
+            z-index: 1000;
+            margin-top: 10px;
+        }
+
+        #searchBar input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+
+        #searchBar button {
+            background: var(--color-dark);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            margin-left: 10px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        /* Breadcrumb */
+        .breadcrumb {
+            padding: 1rem 2rem 0;
+            max-width: 1280px;
+            margin: 0 auto;
+            font-size: 0.75rem;
+            color: var(--color-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .breadcrumb a {
+            color: var(--color-muted);
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            color: var(--color-dark);
+        }
+
+        /* Product Page */
+        .product-page {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            flex: 1;
+        }
+
+        .gallery {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .gallery-img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            object-fit: cover;
+        }
+
+        .product-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .sku {
+            font-size: 0.8rem;
+            color: var(--color-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .product-title {
+            font-size: 2rem;
+            font-weight: 300;
+            line-height: 1.2;
+        }
+
+        .price {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--color-accent);
+        }
+
+        .stock-status {
+            color: #22c55e;
+            font-weight: 500;
+        }
+
+        .qty-selector {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .qty-controls {
+            display: flex;
+            align-items: center;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+        }
+
+        .qty-btn {
+            width: 40px;
+            height: 40px;
+            border: none;
+            background: transparent;
+            cursor: pointer;
+            font-size: 1.2rem;
+            color: var(--color-dark);
+        }
+
+        .qty-input {
+            width: 60px;
+            height: 40px;
+            border: none;
+            text-align: center;
+            font-size: 1rem;
+        }
+
+        .add-to-cart {
+            background: var(--color-dark);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background 0.2s ease;
+        }
+
+        .add-to-cart:hover {
+            background: #333;
+        }
+
+        .product-details {
+            margin-top: 2rem;
+        }
+
+        .detail-section {
+            margin-bottom: 1.5rem;
+        }
+
+        .detail-section h3 {
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .detail-section ul {
+            padding-left: 1.2rem;
+        }
+
+        .detail-section li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Footer Styles */
+        footer {
+            background: white;
+            color: #666;
+            padding: 2rem 1.7325rem 0;
+            border-top: 2px solid #e5e5e5;
+            margin-top: auto;
+        }
+
+        .footer-inner {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 2rem 0;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .footer-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .footer-brand h2 {
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            font-size: 0.85rem;
+        }
+
+        .footer-brand .logo {
+            font-family: var(--font-logo);
+            font-weight: 500;
+            font-size: 1.04rem;
+            color: #000;
+            text-transform: lowercase;
+            letter-spacing: normal;
+        }
+
+        .footer-nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            align-items: center;
+            font-family: var(--font-nav);
+            font-size: 0.74rem;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0.11em;
+        }
+
+        .footer-nav a {
+            color: #666;
+            text-decoration: none;
+            position: relative;
+            padding-bottom: 4px;
+            transition: opacity 0.2s ease;
+        }
+
+        .footer-nav a:hover {
+            opacity: 0.85;
+            color: #333;
+        }
+
+        .footer-nav .separator {
+            color: #999;
+            margin: 0 0.5rem;
+        }
+
+        .footer-payments {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-payments img {
+            height: 3rem;
+        }
+
+        .footer-copyright {
+            text-align: center;
+            color: #999;
+            font-size: 0.975rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .product-page {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                padding: 1rem;
+            }
+
+            nav.desktop-links {
+                display: none;
+            }
+
+            .category-toggle {
+                display: block;
+            }
+
+            .logo-icons {
+                right: 12px;
+                gap: 14px;
+            }
+
+            .footer-top {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-nav {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .footer-nav .separator {
+                display: none;
+            }
+
+            .footer-payments {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header {
+                padding: 1rem 0.5rem 0.6rem;
+            }
+
+            #logo {
+                font-size: 1.5rem;
+            }
+
+            .product-page {
+                padding: 1rem;
+            }
+
+            footer {
+                padding: 1rem 0.5775rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Universal Header -->
+    <header>
+        <div class="header-inner">
+            <div class="logo-row">
+                <h1 id="logo">
+                    <a href="../../index.html">afromyth.</a>
+                </h1>
+                <div class="logo-icons">
+                    <button class="icon-btn" aria-label="Search" onclick="toggleSearch()">
+                        <img src="../../images/s3_search.svg" alt="Search icon">
+                    </button>
+                    <button class="icon-btn" aria-label="Cart">
+                        <img src="../../images/c2_bag.svg" alt="Cart icon">
+                    </button>
+                </div>
+            </div>
+            <div class="links-bar">
+                <div class="category-menu">
+                    <div class="category-toggle" aria-label="Menu" onclick="toggleCategoryMenu()">
+                        <div class="hamburger">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                    <div class="category-dropdown" id="catDropdown">
+                        <ul class="category-list">
+                            <li><a href="../../masks-statues-carvings/">MASKS + STATUES + CARVINGS</a></li>
+                            <li><a href="../../ethiopian-orthodox-crosses/">ETHIOPIAN ORTHODOX CROSSES</a></li>
+                            <li><a href="../../apparel-textiles-jewelry/">APPAREL + TEXTILES + JEWELRY</a></li>
+                            <li><a href="../../books-icons-manuscripts/">BOOKS + ICONS + MANUSCRIPTS</a></li>
+                            <li><a href="../../tokens-medals-pins/">TOKENS + MEDALS + PINS</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <nav class="desktop-links">
+                    <a href="../../masks-statues-carvings/">MASKS + STATUES + CARVINGS</a>
+                    <a href="../../ethiopian-orthodox-crosses/">ETHIOPIAN ORTHODOX CROSSES</a>
+                    <a href="../../apparel-textiles-jewelry/">APPAREL + TEXTILES + JEWELRY</a>
+                    <a href="../../books-icons-manuscripts/">BOOKS + ICONS + MANUSCRIPTS</a>
+                    <a href="../../tokens-medals-pins/">TOKENS + MEDALS + PINS</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Search Bar -->
+    <div id="searchBar">
+        <form onsubmit="return false">
+            <input type="text" placeholder="Search…" aria-label="Search input">
+            <button type="submit">Go</button>
+        </form>
+    </div>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <a href="../../index.html">Home</a> / <a href="../../index.html#frames">Frames</a> / Azizi 5″ x 7″ Standing Frame
+    </div>
+
+    <!-- Product Page Content -->
+    <main class="product-page">
+        <div class="gallery">
+            <img src="https://picsum.photos/seed/frame1/600/800" alt="Azizi 5x7 Standing Frame - Main View" class="gallery-img"/>
+            <img src="https://picsum.photos/seed/frame1a/600/800" alt="Azizi 5x7 Standing Frame - Detail View" class="gallery-img"/>
+            <img src="https://picsum.photos/seed/frame1b/600/800" alt="Azizi 5x7 Standing Frame - Side View" class="gallery-img"/>
+        </div>
+
+        <div class="product-info">
+            <div class="sku">SKU: 10017PK2 | HANDCRAFTED BY ARTISANS</div>
+            <h1 class="product-title">Azizi 5″ x 7″ Standing Frame</h1>
+            <div class="price">$19.95</div>
+            <div class="stock-status">✓ In Stock</div>
+
+            <div class="qty-selector">
+                <label for="quantity">Quantity:</label>
+                <div class="qty-controls">
+                    <button class="qty-btn" onclick="decreaseQty()">−</button>
+                    <input type="number" id="quantity" class="qty-input" value="1" min="1">
+                    <button class="qty-btn" onclick="increaseQty()">+</button>
+                </div>
+            </div>
+
+            <button class="add-to-cart" onclick="addToCart()">Add to Cart</button>
+
+            <div class="product-details">
+                <div class="detail-section">
+                    <p>An antiqued effect brass free standing picture frame.</p>
+                </div>
+
+                <div class="detail-section">
+                    <h3>Why we love it</h3>
+                    <ul>
+                        <li>The metal of the frame has been hand forged around the glass, making each frame a true artisan item</li>
+                        <li>The thicker styled frame with an etched design helps to provide more of a focal point to the picture within the frame</li>
+                        <li>The ideal way to frame old photographs, postcards, letters and all manner of treasured memories or little keepsakes</li>
+                    </ul>
+                </div>
+
+                <div class="detail-section">
+                    <h3>Dimensions</h3>
+                    <p>Frame size: 5″ x 7″ (12.7cm x 17.8cm)<br>
+                    Picture size: 4″ x 6″ (10.2cm x 15.2cm)</p>
+                </div>
+
+                <div class="detail-section">
+                    <h3>Materials</h3>
+                    <p>Antiqued brass with glass insert</p>
+                </div>
+
+                <div class="detail-section">
+                    <h3>Care Instructions</h3>
+                    <p>Clean with a soft, dry cloth. Avoid harsh chemicals.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Universal Footer -->
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-content">
+                <div class="footer-top">
+                    <div class="footer-brand">
+                        <h2>
+                            <span class="logo">afromyth.</span> – THE LONG THREAD HOME.
+                        </h2>
+                    </div>
+                    <nav class="footer-nav">
+                        <a href="../../help-faq.html">HELP & FAQ</a>
+                        <span class="separator">|</span>
+                        <a href="../../about-us/">ABOUT US</a>
+                        <span class="separator">|</span>
+                        <a href="../../contact-us/">CONTACT US</a>
+                        <span class="separator">|</span>
+                        <a href="../../terms-and-conditions/">TERMS & CONDITIONS</a>
+                        <span class="separator">|</span>
+                        <a href="../../privacy-policy/">PRIVACY POLICY</a>
+                    </nav>
+                </div>
+                <div class="footer-payments">
+                    <img src="../../images/payments/payments-50.png" alt="Payment Methods">
+                </div>
+                <div class="footer-copyright">
+                    <span>© 2025 AFROMYTH</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        function toggleCategoryMenu() {
+            const dropdown = document.getElementById("catDropdown");
+            dropdown.classList.toggle("show");
+        }
+        
+        function toggleSearch() {
+            const searchBar = document.getElementById("searchBar");
+            if (searchBar.style.display === "none" || searchBar.style.display === "") {
+                searchBar.style.display = "block";
+                const input = searchBar.querySelector("input");
+                if (input) input.focus();
+            } else {
+                searchBar.style.display = "none";
+            }
+        }
+
+        function decreaseQty() {
+            const input = document.getElementById('quantity');
+            if (input.value > 1) {
+                input.value = parseInt(input.value) - 1;
+            }
+        }
+
+        function increaseQty() {
+            const input = document.getElementById('quantity');
+            input.value = parseInt(input.value) + 1;
+        }
+
+        function addToCart() {
+            const qty = document.getElementById('quantity').value;
+            alert("Added " + qty + " Azizi Frame(s) to cart!");
+        }
+
+        // Click outside to close dropdowns
+        document.addEventListener("click", function(event) {
+            const categoryMenu = document.querySelector(".category-menu");
+            if (categoryMenu && !categoryMenu.contains(event.target)) {
+                document.getElementById("catDropdown").classList.remove("show");
+            }
+        });
+        
+        // Keyboard navigation
+        document.addEventListener("keydown", function(event) {
+            if (event.key === "Escape") {
+                document.getElementById("catDropdown").classList.remove("show");
+                document.getElementById("searchBar").style.display = "none";
+            }
+        });
+    </script>
+</body>
+</html>
