@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>TOKENS &#43; MEDALS &#43; PINS on AFROMYTH</title>
-    <link>http://localhost:1313/afromyth.com/tokens-medals-pins/</link>
+    <link>https://waldeba.github.io/afromyth.com/tokens-medals-pins/</link>
     <description>Recent content in TOKENS &#43; MEDALS &#43; PINS on AFROMYTH</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <atom:link href="http://localhost:1313/afromyth.com/tokens-medals-pins/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://waldeba.github.io/afromyth.com/tokens-medals-pins/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
