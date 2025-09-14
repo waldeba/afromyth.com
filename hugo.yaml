@@ -1,4 +1,4 @@
-baseURL: 'https://afromyth.com'
+baseURL: 'https://waldeba.github.io/afromyth.com/'
 languageCode: 'en-us'
 title: 'AFROMYTH'
 
@@ -13,3 +13,21 @@ markup:
 
 permalinks:
   products: "/products/:slug/"
+
+menu:
+  main:
+    - name: "MASKS + STATUES + CARVINGS"
+      url: "/masks-statues-carvings/"
+      weight: 1
+    - name: "ETHIOPIAN ORTHODOX CROSSES"
+      url: "/ethiopian-orthodox-crosses/"
+      weight: 2
+    - name: "APPAREL + TEXTILES + JEWELRY"
+      url: "/apparel-textiles-jewelry/"
+      weight: 3
+    - name: "BOOKS + ICONS + MANUSCRIPTS"
+      url: "/books-icons-manuscripts/"
+      weight: 4
+    - name: "TOKENS + MEDALS + PINS"
+      url: "/tokens-medals-pins/"
+      weight: 5

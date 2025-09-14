@@ -1,15 +1,26 @@
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ if .Title }}{{ .Title }} | {{ end }}{{ .Site.Title }}</title>
-    <meta name="description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}">
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Marhey:wght@500&family=Roboto:wght@700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&display=swap" rel="stylesheet">
-    
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <link rel="stylesheet" href="{{ relURL "css/styles.css" }}">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>{{ if .Title }}{{ .Title }} | {{ end }}AFROMYTH</title>
+  <meta name="description" content="The Long Thread Home - Handcrafted African artisan pieces, authentic cultural artifacts, and traditional craftsmanship.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Marhey:wght@500&family=Roboto:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&display=swap" rel="stylesheet">
+  
+  <!-- Static CSS Files -->
+  <link rel="stylesheet" href="{{ "css/main.css" | relURL }}">
+  <link rel="stylesheet" href="{{ "css/grid.css" | relURL }}">
+  <link rel="stylesheet" href="{{ "css/product.css" | relURL }}">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root {
+      --font-primary: 'Marhey', sans-serif;
+      --font-nav: 'Roboto', sans-serif;
+      --logo-color: #b87333;
+      --color-dark: #333;
+      --nav-border: rgba(184, 115, 51, 0.3);
+    }
+  </style>
 </head>

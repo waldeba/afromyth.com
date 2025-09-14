@@ -1,0 +1,403 @@
+{{ define "main" }}
+<section class="pinterest-container">
+  <div style="text-align: center; margin-bottom: 3rem;">
+    <h1 style="font-family: var(--font-nav); font-size: 2rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-dark);">{{ .Title }}</h1>
+    <p style="color: #666; font-size: 1.1rem; margin-top: 1rem;">{{ .Content }}</p>
+  </div>
+  
+  <div class="pinterest-grid" id="pinterestGrid">
+    {{ if eq .Section "masks-statues-carvings" }}
+      <!-- Masks, Statues & Carvings Products -->
+      <div class="pinterest-pin" data-category="carvings">
+        <img src="https://picsum.photos/seed/statue1/600/800" alt="Ancestral Statue" loading="lazy">
+        <div class="pin-content">
+          <h3 class="pin-title">Ancestral Statue</h3>
+          <p class="pin-summary">Sacred wooden carving representing ancestral spirits and protection</p>
+          <div class="pin-actions">
+            <button class="pin-cart-btn" onclick="addToCart(this)">
+              <span class="cart-plus">+</span>
+              Add to cart
+            </button>
+            <span class="pin-price">$450</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="pinterest-pin" data-category="sculptures">
+        <img src="https://picsum.photos/seed/bird1/600/800" alt="Senufo Bird" loading="lazy">
+        <div class="pin-content">
+          <h3 class="pin-title">Senufo Bird</h3>
+          <p class="pin-summary">Hornbill sculpture symbolizing fertility and protection</p>
+          <div class="pin-actions">
+            <button class="pin-cart-btn" onclick="addToCart(this)">
+              <span class="cart-plus">+</span>
+              Add to cart
+            </button>
+            <span class="pin-price">$220</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="pinterest-pin" data-category="sculptures">
+        <img src="https://picsum.photos/seed/shona1/600/800" alt="Shona Sculpture" loading="lazy">
+        <div class="pin-content">
+          <h3 class="pin-title">Shona Sculpture</h3>
+          <p class="pin-summary">Zimbabwean serpentine stone carving by master artist</p>
+          <div class="pin-actions">
+            <button class="pin-cart-btn" onclick="addToCart(this)">
+              <span class="cart-plus">+</span>
+              Add to cart
+            </button>
+            <span class="pin-price">$750</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="pinterest-pin" data-category="sculptures">
+        <img src="https://picsum.photos/seed/sculpture1/600/800" alt="Stone Sculpture" loading="lazy">
+        <div class="pin-content">
+          <h3 class="pin-title">Stone Sculpture</h3>
+          <p class="pin-summary">Contemporary African artist's interpretation of ancestral forms</p>
+          <div class="pin-actions">
+            <button class="pin-cart-btn" onclick="addToCart(this)">
+              <span class="cart-plus">+</span>
+              Add to cart
+            </button>
+            <span class="pin-price">$520</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="pinterest-pin" data-category="artifacts">
+        <img src="https://picsum.photos/seed/weight1/600/800" alt="Ashanti Gold Weight" loading="lazy">
+        <div class="pin-content">
+          <h3 class="pin-title">Ashanti Gold Weight</h3>
+          <p class="pin-summary">Antique brass figurine used for weighing gold dust in trade</p>
+          <div class="pin-actions">
+            <button class="pin-cart-btn" onclick="addToCart(this)">
+              <span class="cart-plus">+</span>
+              Add to cart
+            </button>
+            <span class="pin-price">$95</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="pinterest-pin" data-category="shields">
+        <img src="https://picsum.photos/seed/shield1/600/800" alt="Maasai Shield" loading="lazy">
+        <div class="pin-content">
+          <h3 class="pin-title">Maasai Shield</h3>
+          <p class="pin-summary">Traditional warrior shield with cowhide and distinctive patterns</p>
+          <div class="pin-actions">
+            <button class="pin-cart-btn" onclick="addToCart(this)">
+              <span class="cart-plus">+</span>
+              Add to cart
+            </button>
+            <span class="pin-price">$380</span>
+          </div>
+        </div>
+      </div>
+      
+    {{ else if eq .Section "ethiopian-orthodox-crosses" }}
+      <!-- Ethiopian Orthodox Crosses Products -->
+      <div class="pinterest-pin" data-category="crosses">
+        <img src="https://picsum.photos/seed/cross1/600/800" alt="Ethiopian Orthodox Cross" loading="lazy">
+        <div class="pin-content">
+          <h3 class="pin-title">Ethiopian Orthodox Cross</h3>
+          <p class="pin-summary">Blessed ceremonial cross with intricate metalwork details</p>
+          <div class="pin-actions">
+            <button class="pin-cart-btn" onclick="addToCart(this)">
+              <span class="cart-plus">+</span>
+              Add to cart
+            </button>
+            <span class="pin-price">$180</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="pinterest-pin" data-category="crosses">
+        <img src="https://picsum.photos/seed/altar1/600/800" alt="Ethiopian Altar Cross" loading="lazy">
+        <div class="pin-content">
+          <h3 class="pin-title">Ethiopian Altar Cross</h3>
+          <p class="pin-summary">Bronze cross used in church ceremonies</p>
+          <div class="pin-actions">
+            <button class="pin-cart-btn" onclick="addToCart(this)">
+              <span class="cart-plus">+</span>
+              Add to cart
+            </button>
+            <span class="pin-price">$280</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="pinterest-pin" data-category="jewelry">
+        <img src="https://picsum.photos/seed/cross2/600/800" alt="Ethiopian Cross Pendant" loading="lazy">
+        <div class="pin-content">
+          <h3 class="pin-title">Ethiopian Cross Pendant</h3>
+          <p class="pin-summary">Hand-forged silver cross with chain</p>
+          <div class="pin-actions">
+            <button class="pin-cart-btn" onclick="addToCart(this)">
+              <span class="cart-plus">+</span>
+              Add to cart
+            </button>
+            <span class="pin-price">$155</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="pinterest-pin" data-category="instruments">
+        <img src="https://picsum.photos/seed/bell1/600/800" alt="Ethiopian Church Bell" loading="lazy">
+        <div class="pin-content">
+          <h3 class="pin-title">Ethiopian Church Bell</h3>
+          <p class="pin-summary">Bronze bell used in Orthodox religious services</p>
+          <div class="pin-actions">
+            <button class="pin-cart-btn" onclick="addToCart(this)">
+              <span class="cart-plus">+</span>
+              Add to cart
+            </button>
+            <span class="pin-price">$220</span>
+          </div>
+        </div>
+      </div>
+      
+    {{ else if eq .Section "apparel-textiles-jewelry" }}
+      <!-- Apparel, Textiles & Jewelry Products -->
+      <div class="pinterest-pin" data-category="textiles">
+        <img src="https://picsum.photos/seed/textile1/600/800" alt="Kente Cloth Panel" loading="lazy">
+        <div class="pin-content">
+          <h3 class="pin-title">Kente Cloth Panel</h3>
+          <p class="pin-summary">Royal Ghanaian textile with golden threads and traditional patterns</p>
+          <div class="pin-actions">
+            <button class="pin-cart-btn" onclick="addToCart(this)">
+              <span class="cart-plus">+</span>
+              Add to cart
+            </button>
+            <span class="pin-price">$320</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="pinterest-pin" data-category="jewelry">
+        <img src="https://picsum.photos/seed/necklace1/600/800" alt="Beaded Necklace" loading="lazy">
+        <div class="pin-content">
+          <h3 class="pin-title">Beaded Necklace</h3>
+          <p class="pin-summary">Handmade traditional beadwork with cultural significance</p>
+          <div class="pin-actions">
+            <button class="pin-cart-btn" onclick="addToCart(this)">
+              <span class="cart-plus">+</span>
+              Add to cart
+            </button>
+            <span class="pin-price">$85</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="pinterest-pin" data-category="jewelry">
+        <img src="https://picsum.photos/seed/bracelet1/600/800" alt="Tuareg Silver Bracelet" loading="lazy">
+        <div class="pin-content">
+          <h3 class="pin-title">Tuareg Silver Bracelet</h3>
+          <p class="pin-summary">Handcrafted silver cuff with traditional Berber designs</p>
+          <div class="pin-actions">
+            <button class="pin-cart-btn" onclick="addToCart(this)">
+              <span class="cart-plus">+</span>
+              Add to cart
+            </button>
+            <span class="pin-price">$165</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="pinterest-pin" data-category="textiles">
+        <img src="https://picsum.photos/seed/mudcloth1/600/800" alt="Mud Cloth Throw" loading="lazy">
+        <div class="pin-content">
+          <h3 class="pin-title">Mud Cloth Throw</h3>
+          <p class="pin-summary">Bogolan fabric from Mali with symbolic patterns</p>
+          <div class="pin-actions">
+            <button class="pin-cart-btn" onclick="addToCart(this)">
+              <span class="cart-plus">+</span>
+              Add to cart
+            </button>
+            <span class="pin-price">$285</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="pinterest-pin" data-category="textiles">
+        <img src="https://picsum.photos/seed/kuba1/600/800" alt="Kuba Textile" loading="lazy">
+        <div class="pin-content">
+          <h3 class="pin-title">Kuba Textile</h3>
+          <p class="pin-summary">Raffia cloth with intricate cut-pile embroidery</p>
+          <div class="pin-actions">
+            <button class="pin-cart-btn" onclick="addToCart(this)">
+              <span class="cart-plus">+</span>
+              Add to cart
+            </button>
+            <span class="pin-price">$290</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="pinterest-pin" data-category="accessories">
+        <img src="https://picsum.photos/seed/cowrie1/600/800" alt="Cowrie Shell Belt" loading="lazy">
+        <div class="pin-content">
+          <h3 class="pin-title">Cowrie Shell Belt</h3>
+          <p class="pin-summary">Traditional belt adorned with natural cowrie shells</p>
+          <div class="pin-actions">
+            <button class="pin-cart-btn" onclick="addToCart(this)">
+              <span class="cart-plus">+</span>
+              Add to cart
+            </button>
+            <span class="pin-price">$90</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="pinterest-pin" data-category="jewelry">
+        <img src="https://picsum.photos/seed/marriage1/600/800" alt="Tuareg Marriage Bracelet" loading="lazy">
+        <div class="pin-content">
+          <h3 class="pin-title">Tuareg Marriage Bracelet</h3>
+          <p class="pin-summary">Silver cuff given during wedding ceremony</p>
+          <div class="pin-actions">
+            <button class="pin-cart-btn" onclick="addToCart(this)">
+              <span class="cart-plus">+</span>
+              Add to cart
+            </button>
+            <span class="pin-price">$195</span>
+          </div>
+        </div>
+      </div>
+      
+    {{ else if eq .Section "books-icons-manuscripts" }}
+      <!-- Books, Icons & Manuscripts Products -->
+      <div class="pinterest-pin" data-category="icons">
+        <img src="https://picsum.photos/seed/icon1/600/800" alt="Coptic Icon" loading="lazy">
+        <div class="pin-content">
+          <h3 class="pin-title">Coptic Icon</h3>
+          <p class="pin-summary">Ethiopian religious artwork painted on aged wood</p>
+          <div class="pin-actions">
+            <button class="pin-cart-btn" onclick="addToCart(this)">
+              <span class="cart-plus">+</span>
+              Add to cart
+            </button>
+            <span class="pin-price">$160</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="pinterest-pin" data-category="manuscripts">
+        <img src="https://picsum.photos/seed/cover1/600/800" alt="Ethiopian Manuscript Cover" loading="lazy">
+        <div class="pin-content">
+          <h3 class="pin-title">Ethiopian Manuscript Cover</h3>
+          <p class="pin-summary">Leather binding for ancient religious text</p>
+          <div class="pin-actions">
+            <button class="pin-cart-btn" onclick="addToCart(this)">
+              <span class="cart-plus">+</span>
+              Add to cart
+            </button>
+            <span class="pin-price">$350</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="pinterest-pin" data-category="doors">
+        <img src="https://picsum.photos/seed/panel1/600/800" alt="Dogon Door Panel" loading="lazy">
+        <div class="pin-content">
+          <h3 class="pin-title">Dogon Door Panel</h3>
+          <p class="pin-summary">Carved section from granary door</p>
+          <div class="pin-actions">
+            <button class="pin-cart-btn" onclick="addToCart(this)">
+              <span class="cart-plus">+</span>
+              Add to cart
+            </button>
+            <span class="pin-price">$680</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="pinterest-pin" data-category="plaques">
+        <img src="https://picsum.photos/seed/bronze1/600/800" alt="Bronze Plaque" loading="lazy">
+        <div class="pin-content">
+          <h3 class="pin-title">Bronze Plaque</h3>
+          <p class="pin-summary">Benin bronze depicting royal court scenes</p>
+          <div class="pin-actions">
+            <button class="pin-cart-btn" onclick="addToCart(this)">
+              <span class="cart-plus">+</span>
+              Add to cart
+            </button>
+            <span class="pin-price">$680</span>
+          </div>
+        </div>
+      </div>
+      
+    {{ else if eq .Section "tokens-medals-pins" }}
+      <!-- Tokens, Medals & Pins Products -->
+      <div class="pinterest-pin" data-category="regalia">
+        <img src="https://picsum.photos/seed/umbrella1/600/800" alt="Akan Royal Umbrella Top" loading="lazy">
+        <div class="pin-content">
+          <h3 class="pin-title">Akan Royal Umbrella Top</h3>
+          <p class="pin-summary">Gold-plated finial from ceremonial parasol</p>
+          <div class="pin-actions">
+            <button class="pin-cart-btn" onclick="addToCart(this)">
+              <span class="cart-plus">+</span>
+              Add to cart
+            </button>
+            <span class="pin-price">$420</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="pinterest-pin" data-category="jewelry">
+        <img src="https://picsum.photos/seed/apendant1/600/800" alt="Bamana Antelope Pendant" loading="lazy">
+        <div class="pin-content">
+          <h3 class="pin-title">Bamana Antelope Pendant</h3>
+          <p class="pin-summary">Bronze pendant celebrating fertility spirits</p>
+          <div class="pin-actions">
+            <button class="pin-cart-btn" onclick="addToCart(this)">
+              <span class="cart-plus">+</span>
+              Add to cart
+            </button>
+            <span class="pin-price">$95</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="pinterest-pin" data-category="regalia">
+        <img src="https://picsum.photos/seed/handle1/600/800" alt="Ethiopian Fly Whisk Handle" loading="lazy">
+        <div class="pin-content">
+          <h3 class="pin-title">Ethiopian Fly Whisk Handle</h3>
+          <p class="pin-summary">Ivory handle for ceremonial fly whisk</p>
+          <div class="pin-actions">
+            <button class="pin-cart-btn" onclick="addToCart(this)">
+              <span class="cart-plus">+</span>
+              Add to cart
+            </button>
+            <span class="pin-price">$125</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="pinterest-pin" data-category="footwear">
+        <img src="https://picsum.photos/seed/sandals1/600/800" alt="Akan Chief's Sandals" loading="lazy">
+        <div class="pin-content">
+          <h3 class="pin-title">Akan Chief's Sandals</h3>
+          <p class="pin-summary">Golden ceremonial footwear for royal occasions</p>
+          <div class="pin-actions">
+            <button class="pin-cart-btn" onclick="addToCart(this)">
+              <span class="cart-plus">+</span>
+              Add to cart
+            </button>
+            <span class="pin-price">$220</span>
+          </div>
+        </div>
+      </div>
+      
+    {{ else }}
+      <!-- Default content for other sections -->
+      <div style="text-align: center; padding: 3rem 1rem;">
+        <h2 style="color: #666; margin-bottom: 1rem;">Content Coming Soon</h2>
+        <p style="color: #999;">Check back shortly for our curated collection.</p>
+      </div>
+    {{ end }}
+  </div>
+</section>
+{{ end }}

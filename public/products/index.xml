@@ -2,24 +2,52 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>AFROMYTH</title>
-    <link>https://afromyth.com/products/</link>
+    <link>http://localhost:1414/afromyth.com/products/</link>
     <description>Recent content on AFROMYTH</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 15 Jan 2025 10:00:00 +0000</lastBuildDate>
-    <atom:link href="https://afromyth.com/products/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 14 Sep 2025 02:59:15 +0300</lastBuildDate>
+    <atom:link href="http://localhost:1414/afromyth.com/products/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Handcrafted African Ceremonial Mask</title>
+      <link>http://localhost:1414/afromyth.com/products/handcrafted-african-ceremonial-mask/</link>
+      <pubDate>Sun, 14 Sep 2025 02:59:15 +0300</pubDate>
+      <guid>http://localhost:1414/afromyth.com/products/handcrafted-african-ceremonial-mask/</guid>
+      <description>&lt;p&gt;This stunning ceremonial mask represents the rich cultural heritage of West African artistic traditions. Each piece is meticulously handcrafted by skilled artisans who have passed down their techniques through generations, ensuring authenticity and cultural significance in every detail.&lt;/p&gt;&#xA;&lt;p&gt;The mask features intricate carved patterns and natural pigment decorations that tell ancient stories and represent spiritual connections. The use of premium hardwood ensures both durability and the beautiful natural grain that makes each piece unique.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Azizi 5″ x 7″ Standing Frame</title>
-      <link>https://afromyth.com/products/azizi-frame/</link>
+      <link>http://localhost:1414/afromyth.com/products/azizi-frame/</link>
       <pubDate>Wed, 15 Jan 2025 10:00:00 +0000</pubDate>
-      <guid>https://afromyth.com/products/azizi-frame/</guid>
+      <guid>http://localhost:1414/afromyth.com/products/azizi-frame/</guid>
       <description>&lt;p&gt;This is the Azizi 5″ x 7″ Standing Frame product page content. The page uses Hugo&amp;rsquo;s templating system to dynamically populate product information from the front matter above.&lt;/p&gt;</description>
     </item>
     <item>
+      <title>Traditional Kente Cloth</title>
+      <link>http://localhost:1414/afromyth.com/products/traditional-kente-cloth/</link>
+      <pubDate>Thu, 19 Dec 2024 15:00:00 -0500</pubDate>
+      <guid>http://localhost:1414/afromyth.com/products/traditional-kente-cloth/</guid>
+      <description>&lt;p&gt;This authentic Kente cloth represents one of Africa&amp;rsquo;s most recognizable textile traditions. Handwoven by master weavers in Ghana, each strip tells a story through its intricate patterns and vibrant colors.&lt;/p&gt;&#xA;&lt;h2 id=&#34;cultural-significance&#34;&gt;Cultural Significance&lt;/h2&gt;&#xA;&lt;p&gt;Kente cloth is more than just fabric - it&amp;rsquo;s a symbol of African heritage and identity. The colors and patterns have deep cultural meanings:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Gold represents wealth and royalty&lt;/li&gt;&#xA;&lt;li&gt;Blue symbolizes peace and love&lt;/li&gt;&#xA;&lt;li&gt;Red represents strength and determination&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;features&#34;&gt;Features&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Handwoven on traditional narrow strip looms&lt;/li&gt;&#xA;&lt;li&gt;Authentic patterns with cultural significance&lt;/li&gt;&#xA;&lt;li&gt;Vibrant, colorfast dyes&lt;/li&gt;&#xA;&lt;li&gt;Perfect for ceremonial wear or display&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;care-instructions&#34;&gt;Care Instructions&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Dry cleaning recommended to preserve colors&lt;/li&gt;&#xA;&lt;li&gt;If hand washing is necessary, use cold water and mild detergent&lt;/li&gt;&#xA;&lt;li&gt;Air dry away from direct sunlight&lt;/li&gt;&#xA;&lt;li&gt;Store flat or carefully folded&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;shipping-information&#34;&gt;Shipping Information&lt;/h2&gt;&#xA;&lt;p&gt;This precious textile is carefully packaged and ships within 3-5 business days.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Handcrafted Wooden Bowl</title>
+      <link>http://localhost:1414/afromyth.com/products/handcrafted-wooden-bowl/</link>
+      <pubDate>Thu, 19 Dec 2024 14:58:00 -0500</pubDate>
+      <guid>http://localhost:1414/afromyth.com/products/handcrafted-wooden-bowl/</guid>
+      <description>&lt;p&gt;This stunning wooden bowl showcases the natural beauty of African hardwood and the skill of traditional woodcarvers. Each bowl is hand-carved from a single piece of sustainably sourced wood.&lt;/p&gt;&#xA;&lt;h2 id=&#34;features&#34;&gt;Features&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Hand-carved from solid hardwood&lt;/li&gt;&#xA;&lt;li&gt;Natural wood grain patterns make each piece unique&lt;/li&gt;&#xA;&lt;li&gt;Food-safe finish suitable for serving&lt;/li&gt;&#xA;&lt;li&gt;Smooth, polished surface&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;care-instructions&#34;&gt;Care Instructions&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Hand wash with mild soap and warm water&lt;/li&gt;&#xA;&lt;li&gt;Dry immediately and thoroughly&lt;/li&gt;&#xA;&lt;li&gt;Apply food-safe mineral oil monthly to maintain finish&lt;/li&gt;&#xA;&lt;li&gt;Never soak or put in dishwasher&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;shipping-information&#34;&gt;Shipping Information&lt;/h2&gt;&#xA;&lt;p&gt;Ships within 1-2 business days. Carefully packaged to prevent damage during transit.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Sample African Basket</title>
+      <link>http://localhost:1414/afromyth.com/products/sample-african-basket/</link>
+      <pubDate>Thu, 19 Dec 2024 14:56:18 -0500</pubDate>
+      <guid>http://localhost:1414/afromyth.com/products/sample-african-basket/</guid>
+      <description>&lt;p&gt;This beautiful handwoven basket represents centuries of traditional African craftsmanship. Each basket is carefully created by skilled artisans using time-honored techniques passed down through generations.&lt;/p&gt;&#xA;&lt;h2 id=&#34;features&#34;&gt;Features&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Authentic traditional weaving patterns&lt;/li&gt;&#xA;&lt;li&gt;Made from sustainably sourced natural materials&lt;/li&gt;&#xA;&lt;li&gt;Each piece is unique with slight variations&lt;/li&gt;&#xA;&lt;li&gt;Perfect for storage or decorative display&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;care-instructions&#34;&gt;Care Instructions&lt;/h2&gt;&#xA;&lt;p&gt;To maintain the beauty and integrity of your basket:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Dust regularly with a dry, soft cloth&lt;/li&gt;&#xA;&lt;li&gt;Keep away from direct sunlight to prevent fading&lt;/li&gt;&#xA;&lt;li&gt;Avoid exposure to moisture or humidity&lt;/li&gt;&#xA;&lt;li&gt;Handle with care to preserve the weaving&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;shipping-information&#34;&gt;Shipping Information&lt;/h2&gt;&#xA;&lt;p&gt;This item ships within 2-3 business days. Free shipping on orders over $75.&lt;/p&gt;</description>
+    </item>
+    <item>
       <title></title>
-      <link>https://afromyth.com/products/</link>
+      <link>http://localhost:1414/afromyth.com/products/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://afromyth.com/products/</guid>
+      <guid>http://localhost:1414/afromyth.com/products/</guid>
       <description></description>
     </item>
   </channel>

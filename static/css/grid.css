@@ -1,0 +1,247 @@
+/* Home Page Pinterest Grid */
+.hero {
+  text-align: center;
+  padding: 4rem 0;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: var(--color-dark);
+  font-weight: 700;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  color: #666;
+  max-width: 600px;
+  margin: 0 auto 2rem;
+}
+
+.pinterest-grid {
+  columns: 300px;
+  column-gap: 20px;
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.product-card {
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 20px;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  break-inside: avoid;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.product-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 12px 12px 0 0;
+}
+
+.product-content {
+  padding: 1.5rem;
+}
+
+.product-title {
+  font-family: var(--font-nav);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--color-dark);
+  font-size: 1.1rem;
+  line-height: 1.3;
+}
+
+.product-desc {
+  color: #666;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.product-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.product-price {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--logo-color);
+  font-family: var(--font-nav);
+}
+
+.product-btn {
+  background: var(--color-dark);
+  color: #fff;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  border-radius: 6px;
+  font-family: var(--font-nav);
+  font-weight: 500;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: all 0.3s ease;
+}
+
+.product-btn:hover {
+  background: var(--logo-color);
+  transform: translateY(-1px);
+}
+
+.category-badge {
+  background: var(--logo-color);
+  color: #fff;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.75rem;
+  display: inline-block;
+  font-family: var(--font-nav);
+}
+
+.placeholder-image {
+  width: 100%;
+  height: 200px;
+  background: linear-gradient(135deg, var(--logo-color), rgba(184, 115, 51, .7));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+/* Section Pages Grid */
+.section-hero {
+  text-align: center;
+  padding: 3rem 0;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+.section-hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--color-dark);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.section-hero p {
+  font-size: 1.1rem;
+  color: #666;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.section-products {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.section-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.section-card {
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.section-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.section-card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.section-card-body {
+  padding: 1.5rem;
+}
+
+.section-card-title {
+  font-family: var(--font-nav);
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: var(--color-dark);
+  font-size: 1.1rem;
+}
+
+.section-card-desc {
+  color: #666;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.section-card-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.section-card-price {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--logo-color);
+  font-family: var(--font-nav);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+  
+  .hero p {
+    font-size: 1rem;
+  }
+  
+  .pinterest-grid {
+    columns: 1fr;
+    max-width: 400px;
+  }
+  
+  .section-hero h1 {
+    font-size: 2rem;
+  }
+  
+  .section-hero p {
+    font-size: 1rem;
+  }
+  
+  .section-grid {
+    grid-template-columns: 1fr;
+  }
+}

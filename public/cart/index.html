@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><script src="/afromyth.com/livereload.js?mindelay=10&amp;v=2&amp;port=1414&amp;path=afromyth.com/livereload" data-no-instant defer></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Shopping Cart | AFROMYTH</title>
+  <meta name="description" content="The Long Thread Home - Handcrafted African artisan pieces, authentic cultural artifacts, and traditional craftsmanship.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Marhey:wght@500&family=Roboto:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&display=swap" rel="stylesheet">
+  
+  
+  <link rel="stylesheet" href="/afromyth.com/css/main.css">
+  <link rel="stylesheet" href="/afromyth.com/css/grid.css">
+  <link rel="stylesheet" href="/afromyth.com/css/product.css">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root {
+      --font-primary: 'Marhey', sans-serif;
+      --font-nav: 'Roboto', sans-serif;
+      --logo-color: #b87333;
+      --color-dark: #333;
+      --nav-border: rgba(184, 115, 51, 0.3);
+    }
+  </style>
+</head>
+
+<body>
+    <header>
+    <div class="header-inner">
+        <div class="logo-row">
+            <h1 id="logo">
+                <a href="http://localhost:1414/" style="color: inherit; text-decoration: none;">afromyth.</a>
+            </h1>
+            <div class="logo-icons">
+                <button class="icon-btn" aria-label="Search" onclick="toggleSearch()">
+                    <img src="/afromyth.com/images/s3_search.svg" alt="Search icon">
+                </button>
+                <button class="icon-btn" aria-label="Cart">
+                    <img src="/afromyth.com/images/c2_bag.svg" alt="Cart icon">
+                </button>
+            </div>
+        </div>
+        <div class="links-bar">
+            <div class="category-menu">
+                <div class="category-toggle" aria-label="Menu" onclick="toggleCategoryMenu()">
+                    <div class="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+                <div class="category-dropdown" id="catDropdown">
+                    <ul class="category-list">
+                        <li><a href="/afromyth.com/masks-statues-carvings/">MASKS + STATUES + CARVINGS</a></li>
+                        <li><a href="/afromyth.com/ethiopian-orthodox-crosses/">ETHIOPIAN ORTHODOX CROSSES</a></li>
+                        <li><a href="/afromyth.com/apparel-textiles-jewelry/">APPAREL + TEXTILES + JEWELRY</a></li>
+                        <li><a href="/afromyth.com/books-icons-manuscripts/">BOOKS + ICONS + MANUSCRIPTS</a></li>
+                        <li><a href="/afromyth.com/tokens-medals-pins/">TOKENS + MEDALS + PINS</a></li>
+                    </ul>
+                </div>
+            </div>
+            <nav class="desktop-links">
+                <a href="/afromyth.com/masks-statues-carvings/">MASKS + STATUES + CARVINGS</a>
+                <a href="/afromyth.com/ethiopian-orthodox-crosses/">ETHIOPIAN ORTHODOX CROSSES</a>
+                <a href="/afromyth.com/apparel-textiles-jewelry/">APPAREL + TEXTILES + JEWELRY</a>
+                <a href="/afromyth.com/books-icons-manuscripts/">BOOKS + ICONS + MANUSCRIPTS</a>
+                <a href="/afromyth.com/tokens-medals-pins/">TOKENS + MEDALS + PINS</a>
+            </nav>
+        </div>
+    </div>
+</header>
+
+<div id="searchBar">
+    <form onsubmit="return false">
+        <input type="text" placeholder="Search…" aria-label="Search input">
+        <button type="submit">Go</button>
+    </form>
+</div>
+
+    <main>
+        
+<section class="pinterest-container">
+  <div style="text-align: center; margin-bottom: 3rem;">
+    <h1 style="font-family: var(--font-nav); font-size: 2rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-dark);">Shopping Cart</h1>
+    <p style="color: #666; font-size: 1.1rem; margin-top: 1rem;"><h1 id="shopping-cart">Shopping Cart</h1>
+<p>Your cart is currently empty. Browse our collections to add items.</p>
+</p>
+  </div>
+  
+  <div class="pinterest-grid" id="pinterestGrid">
+    
+      
+      <div style="text-align: center; padding: 3rem 1rem;">
+        <h2 style="color: #666; margin-bottom: 1rem;">Content Coming Soon</h2>
+        <p style="color: #999;">Check back shortly for our curated collection.</p>
+      </div>
+    
+  </div>
+</section>
+
+    </main>
+    <footer class="bg-white text-gray-700 footer-padding">
+    <div class="border-t-2 border-gray-200"></div>
+    <div class="footer-inner">
+        <div class="py-10">
+            
+            <div class="flex flex-col md:flex-row md:items-center md:justify-between space-y-4 md:space-y-0 mb-8">
+                
+                <div class="flex-shrink-0">
+                    <h2 class="font-bold uppercase tracking-widest text-sm">
+                        <span class="rammetto-font font-normal lowercase tracking-normal" style="color:#000;font-size:1.04rem">afromyth.</span> – THE LONG THREAD HOME.
+                    </h2>
+                </div>
+                
+                <div class="flex-shrink-0">
+                    <nav class="flex justify-start md:justify-end">
+                        <div class="flex flex-col sm:flex-row sm:items-center sm:space-x-3 space-y-2 sm:space-y-0" style="font-family:var(--font-nav);font-size:.74rem;font-weight:400;text-transform:uppercase;letter-spacing:.11em;color:#666">
+                            <a href="/afromyth.com/help-faq.html" class="hover:underline" style="color:#666;text-decoration:none;position:relative;padding-bottom:4px;transition:opacity .2s ease">HELP & FAQ</a>
+                            <span class="hidden sm:inline text-gray-400">|</span>
+                            <a href="/afromyth.com/about-us.html" class="hover:underline" style="color:#666;text-decoration:none;position:relative;padding-bottom:4px;transition:opacity .2s ease">ABOUT US</a>
+                            <span class="hidden sm:inline text-gray-400">|</span>
+                            <a href="/afromyth.com/contact-us.html" class="hover:underline" style="color:#666;text-decoration:none;position:relative;padding-bottom:4px;transition:opacity .2s ease">CONTACT US</a>
+                            <span class="hidden sm:inline text-gray-400">|</span>
+                            <a href="/afromyth.com/terms-and-conditions.html" class="hover:underline" style="color:#666;text-decoration:none;position:relative;padding-bottom:4px;transition:opacity .2s ease">TERMS & CONDITIONS</a>
+                            <span class="hidden sm:inline text-gray-400">|</span>
+                            <a href="/afromyth.com/privacy-policy.html" class="hover:underline" style="color:#666;text-decoration:none;position:relative;padding-bottom:4px;transition:opacity .2s ease">PRIVACY POLICY</a>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+            
+            <div class="flex justify-start lg:justify-end lg:pr-10 mb-6">
+                <div class="flex items-center">
+                    <img src="/afromyth.com/images/payments/payments-50.png" alt="Payment Methods" class="h-12">
+                </div>
+            </div>
+            
+            <div class="flex justify-center">
+                <div class="text-gray-500" style="font-size:.975rem">
+                    <span>© 2025 AFROMYTH</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+    function toggleCategoryMenu() {
+        const dropdown = document.getElementById("catDropdown");
+        dropdown.classList.toggle("show");
+    }
+    
+    document.addEventListener("click", function(event) {
+        const categoryMenu = document.querySelector(".category-menu");
+        if (categoryMenu && !categoryMenu.contains(event.target)) {
+            document.getElementById("catDropdown").classList.remove("show");
+        }
+    });
+    
+    document.addEventListener("keydown", function(event) {
+        if (event.key === "Escape") {
+            document.getElementById("catDropdown").classList.remove("show");
+            document.getElementById("searchBar").style.display = "none";
+        }
+    });
+    
+    function toggleSearch() {
+        const searchBar = document.getElementById("searchBar");
+        if (searchBar.style.display === "none" || searchBar.style.display === "") {
+            searchBar.style.display = "block";
+            const input = searchBar.querySelector("input");
+            if (input) input.focus();
+        } else {
+            searchBar.style.display = "none";
+        }
+    }
+</script>
+
+    
+    
+    <script src="/afromyth.com/js/main.js"></script>
+</body>
+</html>

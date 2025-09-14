@@ -1,319 +1,636 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AFROMYTH</title>
-    <meta name="description" content="AFROMYTH - THE LONG THREAD HOME">
+    <title>Help & FAQ - AFROMYTH</title>
+    <meta name="description" content="Frequently asked questions about AFROMYTH products, shipping, returns, and artisan crafts.">
     
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Marhey:wght@500&family=Roboto:wght@700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&display=swap" rel="stylesheet">
     
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <link rel="stylesheet" href="/css/styles.css">
+    <style>
+        :root {
+            --font-logo: 'Marhey', cursive;
+            --font-nav: 'Roboto', sans-serif;
+            --font-sans: 'Poppins', sans-serif;
+            --color-dark: #1a1a1a;
+            --logo-color: rgb(184,115,51);
+            --border: #e5e5e5;
+            --gap: 1.4rem;
+            --icon-size: 28.6px;
+            --hover-line: #1a1a1a;
+            --hover-line-h: 2px;
+            --icons-right: 140px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            color: var(--color-dark);
+            line-height: 1.6;
+            background: #fff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            padding: 1.32rem 1.5rem 0;
+        }
+
+        .header-inner {
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .logo-row {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 0.9rem;
+        }
+
+        #logo {
+            font-family: var(--font-logo);
+            color: #000;
+            letter-spacing: 0;
+            font-size: 1.97rem;
+            text-transform: lowercase;
+            font-weight: 500;
+            line-height: 1;
+        }
+
+        #logo a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .logo-icons {
+            position: absolute;
+            right: var(--icons-right);
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            gap: 18px;
+            align-items: center;
+        }
+
+        .icon-btn {
+            width: var(--icon-size);
+            height: var(--icon-size);
+            background: none;
+            border: none;
+            padding: 0;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .icon-btn img {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+        .icon-btn:hover {
+            opacity: 0.65;
+        }
+
+        .links-bar {
+            border-bottom: 1px solid var(--border);
+            position: relative;
+            padding-bottom: 0.55rem;
+            margin-bottom: 0.55rem;
+        }
+
+        nav.desktop-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: var(--gap);
+            font-family: var(--font-nav);
+            font-size: 0.74rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.11em;
+            position: relative;
+        }
+
+        nav.desktop-links a {
+            position: relative;
+            color: var(--color-dark);
+            text-decoration: none;
+            white-space: nowrap;
+            padding-bottom: 4px;
+            transition: opacity 0.2s ease;
+        }
+
+        nav.desktop-links a:hover {
+            opacity: 0.85;
+        }
+
+        nav.desktop-links a::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -1px;
+            height: var(--hover-line-h);
+            width: 0;
+            background: var(--hover-line);
+            transition: width 0.18s ease;
+        }
+
+        nav.desktop-links a:hover::after {
+            width: 100%;
+        }
+
+        main {
+            flex: 1;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+            width: 100%;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .page-header h1 {
+            font-family: var(--font-logo);
+            font-size: 2.5rem;
+            color: var(--color-dark);
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .page-header p {
+            font-size: 1.1rem;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-section {
+            margin-bottom: 1rem;
+        }
+
+        .faq-header {
+            font-family: var(--font-nav);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            padding: 1.5rem 1rem;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            font-size: 0.9rem;
+            color: var(--color-dark);
+            background: #fff;
+            transition: all 0.3s ease;
+            margin-bottom: 0;
+        }
+
+        .faq-header:hover {
+            background: #f9f9f9;
+            border-color: #ddd;
+        }
+
+        .faq-header.active {
+            background: #f5f5f5;
+            border-color: var(--color-dark);
+        }
+
+        .faq-header span:last-child {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: var(--color-dark);
+            transition: transform 0.3s ease;
+        }
+
+        .faq-header.active span:last-child {
+            transform: rotate(45deg);
+        }
+
+        .faq-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.3s ease;
+            border: 1px solid var(--border);
+            border-top: none;
+            border-radius: 0 0 4px 4px;
+            background: #fff;
+        }
+
+        .faq-content.open {
+            max-height: 1000px;
+            padding: 1.5rem;
+        }
+
+        .faq-content h4 {
+            font-family: var(--font-nav);
+            font-size: 1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin: 1.5rem 0 0.75rem 0;
+            color: var(--color-dark);
+        }
+
+        .faq-content h4:first-child {
+            margin-top: 0;
+        }
+
+        .faq-content p {
+            margin-bottom: 1rem;
+            color: #666;
+            font-weight: 300;
+            line-height: 1.7;
+        }
+
+        .faq-content ul {
+            margin-bottom: 1.5rem;
+            padding-left: 1.5rem;
+        }
+
+        .faq-content li {
+            margin-bottom: 0.5rem;
+            color: #666;
+            font-weight: 300;
+        }
+
+        .faq-content strong {
+            color: var(--color-dark);
+            font-weight: 400;
+        }
+
+        .contact-section {
+            text-align: center;
+            margin-top: 4rem;
+            padding: 2rem;
+            background: #f9f9f9;
+            border-radius: 8px;
+        }
+
+        .contact-section h3 {
+            font-family: var(--font-nav);
+            font-size: 1.2rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 1rem;
+            color: var(--color-dark);
+        }
+
+        .contact-section p {
+            margin-bottom: 1rem;
+            color: #666;
+        }
+
+        .contact-section a {
+            color: var(--color-dark);
+            text-decoration: none;
+            font-weight: 400;
+        }
+
+        .contact-section a:hover {
+            opacity: 0.7;
+        }
+
+        /* Mobile Styles */
+        @media (max-width: 768px) {
+            nav.desktop-links {
+                display: none;
+            }
+
+            #logo {
+                font-size: 1.49rem;
+            }
+
+            .logo-icons {
+                right: 12px;
+                gap: 14px;
+            }
+
+            main {
+                padding: 2rem 1rem;
+            }
+
+            .page-header h1 {
+                font-size: 2rem;
+            }
+
+            .faq-header {
+                padding: 1.2rem 0.8rem;
+                font-size: 0.8rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header {
+                padding: 1rem 0.5rem 0.6rem;
+            }
+
+            #logo {
+                font-size: 1.31rem;
+            }
+
+            main {
+                padding: 1.5rem 0.75rem;
+            }
+
+            .page-header h1 {
+                font-size: 1.8rem;
+            }
+
+            .faq-header {
+                padding: 1rem 0.6rem;
+                font-size: 0.75rem;
+            }
+        }
+    </style>
 </head>
 
 <body>
+    <!-- Header -->
     <header>
-    <div class="header-inner">
-        <div class="logo-row">
-            <h1 id="logo">
-                <a href="https://afromyth.com/" style="color: inherit; text-decoration: none;">afromyth.</a>
-            </h1>
-            <div class="logo-icons">
-                <button class="icon-btn" aria-label="Search" onclick="toggleSearch()">
-                    <img src="/images/s3_search.svg" alt="Search icon">
-                </button>
-                <button class="icon-btn" aria-label="Cart">
-                    <img src="/images/c2_bag.svg" alt="Cart icon">
-                </button>
+        <div class="header-inner">
+            <div class="logo-row">
+                <h1 id="logo">
+                    <a href="/afromyth.com/">afromyth</a>
+                </h1>
+                <div class="logo-icons">
+                    <button class="icon-btn" aria-label="Search">
+                        <img src="/afromyth.com/images/s3_search.svg" alt="Search icon">
+                    </button>
+                    <button class="icon-btn" aria-label="Cart">
+                        <img src="/afromyth.com/images/c2_bag.svg" alt="Cart icon">
+                    </button>
+                </div>
+            </div>
+            <div class="links-bar">
+                <nav class="desktop-links">
+                    <a href="/afromyth.com/masks-statues-carvings/">MASKS + STATUES + CARVINGS</a>
+                    <a href="/afromyth.com/ethiopian-orthodox-crosses/">ETHIOPIAN ORTHODOX CROSSES</a>
+                    <a href="/afromyth.com/apparel-textiles-jewelry/">APPAREL + TEXTILES + JEWELRY</a>
+                    <a href="/afromyth.com/books-icons-manuscripts/">BOOKS + ICONS + MANUSCRIPTS</a>
+                    <a href="/afromyth.com/tokens-medals-pins/">TOKENS + MEDALS + PINS</a>
+                </nav>
             </div>
         </div>
-        <div class="links-bar">
-            <div class="category-menu">
-                <div class="category-toggle" aria-label="Menu" onclick="toggleCategoryMenu()">
-                    <div class="hamburger">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <div class="page-header">
+            <h1>Help & FAQ</h1>
+            <p>Find answers to common questions about our handcrafted African artisan pieces, shipping, and more.</p>
+        </div>
+
+        <div class="faq-container">
+            <!-- Shipping & Delivery -->
+            <div class="faq-section">
+                <div class="faq-header" onclick="toggleFAQ(this)">
+                    <span>Shipping & Delivery</span>
+                    <span>+</span>
                 </div>
-                <div class="category-dropdown" id="catDropdown">
-                    <ul class="category-list">
-                        <li><a href="/masks-statues-carvings/">MASKS + STATUES + CARVINGS</a></li>
-                        <li><a href="/ethiopian-orthodox-crosses/">ETHIOPIAN ORTHODOX CROSSES</a></li>
-                        <li><a href="/apparel-textiles-jewelry/">APPAREL + TEXTILES + JEWELRY</a></li>
-                        <li><a href="/books-icons-manuscripts/">BOOKS + ICONS + MANUSCRIPTS</a></li>
-                        <li><a href="/tokens-medals-pins/">TOKENS + MEDALS + PINS</a></li>
+                <div class="faq-content">
+                    <h4>UK Mainland Shipping</h4>
+                    <ul>
+                        <li><strong>FREE Standard Delivery</strong> on orders over £150</li>
+                        <li><strong>Standard Delivery</strong> (3-5 working days) - £5.95</li>
+                        <li><strong>Express Delivery</strong> (1-2 working days) - £12.95</li>
                     </ul>
+
+                    <h4>International Shipping</h4>
+                    <p>We ship our handcrafted pieces worldwide. International shipping rates are calculated at checkout based on destination and package weight.</p>
+                    <ul>
+                        <li><strong>Europe:</strong> 5-10 working days</li>
+                        <li><strong>North America:</strong> 7-14 working days</li>
+                        <li><strong>Rest of World:</strong> 10-21 working days</li>
+                    </ul>
+
+                    <h4>Collection</h4>
+                    <p>Free collection available from our London studio by appointment. Please contact us to arrange.</p>
                 </div>
             </div>
-            <nav class="desktop-links">
-                <a href="/masks-statues-carvings/">MASKS + STATUES + CARVINGS</a>
-                <a href="/ethiopian-orthodox-crosses/">ETHIOPIAN ORTHODOX CROSSES</a>
-                <a href="/apparel-textiles-jewelry/">APPAREL + TEXTILES + JEWELRY</a>
-                <a href="/books-icons-manuscripts/">BOOKS + ICONS + MANUSCRIPTS</a>
-                <a href="/tokens-medals-pins/">TOKENS + MEDALS + PINS</a>
-            </nav>
-        </div>
-    </div>
-</header>
 
-<div id="searchBar">
-    <form onsubmit="return false">
-        <input type="text" placeholder="Search…" aria-label="Search input">
-        <button type="submit">Go</button>
-    </form>
-</div>
+            <!-- Product Care & Authenticity -->
+            <div class="faq-section">
+                <div class="faq-header" onclick="toggleFAQ(this)">
+                    <span>Product Care & Authenticity</span>
+                    <span>+</span>
+                </div>
+                <div class="faq-content">
+                    <h4>Caring for Your Artisan Pieces</h4>
+                    <p>Each piece is handcrafted by skilled artisans using traditional methods. To preserve their beauty:</p>
+                    <ul>
+                        <li>Dust regularly with a soft, dry cloth</li>
+                        <li>Keep away from direct sunlight and moisture</li>
+                        <li>Handle with care - these are authentic, handmade items</li>
+                        <li>For textiles, professional cleaning is recommended</li>
+                    </ul>
 
-    <main class="container">
-        
-
-<div class="breadcrumb">
-    <a href="https://afromyth.com/">Home</a> / <a href="https://afromyth.com/#frames">Frames</a> / 
-</div>
-
-
-<div class="product-page">
-    <div class="gallery">
-        <div class="gallery-images">
-            <img src="https://picsum.photos/seed/frame1/800/800" alt="Azizi 5x7 Standing Frame - Main View" class="gallery-img"/>
-            <img src="https://picsum.photos/seed/frame1a/800/800" alt="Azizi 5x7 Standing Frame - Detail View" class="gallery-img"/>
-            <img src="https://picsum.photos/seed/frame1b/800/800" alt="Azizi 5x7 Standing Frame - Side View" class="gallery-img"/>
-            <img src="https://picsum.photos/seed/frame1c/800/800" alt="Azizi 5x7 Standing Frame - Back View" class="gallery-img"/>
-        </div>
-
-        
-        <div class="delivery-returns">
-            <div class="delivery-returns-header" onclick="toggleDeliveryReturns(this)">
-                <span>D E L I V E R Y &nbsp; &amp; &nbsp; R E T U R N</span>
-                <span>+</span>
-            </div>
-            <div class="delivery-returns-content">
-                <p>We aim to dispatch your order within 24/48h Monday - Friday*.</p>
-                <h4>UK Mainland / Collection</h4>
-                <ul>
-                    <li>FREE Standard Delivery over £150*</li>
-                    <li>Standard Delivery (3 - 5 working days) £5.95*</li>
-                    <li>Expedited Delivery (2 - 3 working days) £8.50*</li>
-                </ul>
-                <p>Collect FREE from AFROMYTH Studio</p>
-                <h4>International Orders</h4>
-                <p>International Orders please contact us.</p>
-                <h4>Returns</h4>
-                <p>Should you change your mind about an item, we are happy to offer an exchange or a refund. All we ask is that you return the item to us in an unused state and in its original packaging within 14 days of receipt.</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="product-info">
-        <div class="sku">10017PK2 | HANDCRAFTED BY ARTISANS</div>
-        <h1 class="product-title"></h1>
-        <div class="price">$19.95</div>
-        <div class="stock-status">✓ In Stock</div>
-
-        <div class="qty-selector">
-            <label for="quantity">Quantity:</label>
-            <div class="qty-controls">
-                <button class="qty-btn" onclick="decreaseQty()">−</button>
-                <input type="number" id="quantity" class="qty-input" value="1" min="1">
-                <button class="qty-btn" onclick="increaseQty()">+</button>
-            </div>
-        </div>
-
-        <button class="add-to-cart" onclick="addToCart()">Add to Cart</button>
-
-        <div class="product-details">
-            <div class="detail-section">
-                <p>An antiqued effect brass free standing picture frame.</p>
+                    <h4>Authenticity Guarantee</h4>
+                    <p>All our pieces are sourced directly from African artisans and collectives. Each item comes with information about its origin and the artisan community that created it.</p>
+                </div>
             </div>
 
-            <div class="detail-section">
-                <h3>Why we love it</h3>
-                <ul>
+            <!-- Returns & Exchanges -->
+            <div class="faq-section">
+                <div class="faq-header" onclick="toggleFAQ(this)">
+                    <span>Returns & Exchanges</span>
+                    <span>+</span>
+                </div>
+                <div class="faq-content">
+                    <h4>Return Policy</h4>
+                    <p>We want you to love your purchase. If you're not completely satisfied, you can return items within <strong>30 days</strong> of delivery.</p>
                     
-                    <li>The metal of the frame has been hand forged around the glass, making each frame a true artisan item</li>
-                    <li>The thicker styled frame with an etched design helps to provide more of a focal point to the picture within the frame</li>
-                    <li>The ideal way to frame old photographs, postcards, letters and all manner of treasured memories or little keepsakes</li>
-                    
-                </ul>
-            </div>
+                    <h4>Return Conditions</h4>
+                    <ul>
+                        <li>Items must be in original condition</li>
+                        <li>Original packaging required</li>
+                        <li>Return shipping costs are covered by customer unless item is faulty</li>
+                        <li>Custom or personalized items cannot be returned</li>
+                    </ul>
 
-            <div class="detail-section">
-                <h3>Details you'll appreciate</h3>
-                <ul>
-                    
-                    <li>Visible picture area: H 16cm x W 11cm</li>
-                    <li>Other sizes available. Matching hanging frames also available</li>
-                    <li>As these are all hand made, the dimensions will vary slightly between frames</li>
-                    
-                </ul>
-            </div>
-
-            <div class="product-meta">
-                <div class="meta-item">
-                    <span class="meta-label">SKU:</span>
-                    <span>10017PK2</span>
-                </div>
-                <div class="meta-item">
-                    <span class="meta-label">Dimensions:</span>
-                    <span>H 19cm x W 14cm (Portrait)</span>
-                </div>
-                <div class="meta-item">
-                    <span class="meta-label">Material:</span>
-                    <span>Metal &amp; Glass</span>
-                </div>
-                <div class="meta-item">
-                    <span class="meta-label">Colour:</span>
-                    <span>Antique Brass</span>
+                    <h4>How to Return</h4>
+                    <p>Contact us at <strong>returns@afromyth.com</strong> with your order number and reason for return. We'll provide return instructions and a return reference number.</p>
                 </div>
             </div>
+
+            <!-- Order Tracking -->
+            <div class="faq-section">
+                <div class="faq-header" onclick="toggleFAQ(this)">
+                    <span>Order Tracking & Processing</span>
+                    <span>+</span>
+                </div>
+                <div class="faq-content">
+                    <h4>Order Processing Time</h4>
+                    <p>Orders are typically processed within <strong>1-3 business days</strong>. Some handmade items may require additional time and will be clearly marked.</p>
+
+                    <h4>Tracking Your Order</h4>
+                    <p>Once your order ships, you'll receive a tracking number via email. You can track your package using:</p>
+                    <ul>
+                        <li>Royal Mail (UK orders)</li>
+                        <li>DHL or FedEx (International orders)</li>
+                    </ul>
+
+                    <h4>Order Changes</h4>
+                    <p>Need to change your order? Contact us within 2 hours of placing your order at <strong>orders@afromyth.com</strong> and we'll do our best to accommodate changes.</p>
+                </div>
+            </div>
+
+            <!-- Artisan Stories -->
+            <div class="faq-section">
+                <div class="faq-header" onclick="toggleFAQ(this)">
+                    <span>About Our Artisans</span>
+                    <span>+</span>
+                </div>
+                <div class="faq-content">
+                    <h4>Supporting African Artisans</h4>
+                    <p>AFROMYTH works directly with artisan collectives across Africa, ensuring fair wages and preserving traditional craftsmanship techniques passed down through generations.</p>
+
+                    <h4>Artisan Collectives We Support</h4>
+                    <ul>
+                        <li><strong>Kente Weavers Collective</strong> - Ghana</li>
+                        <li><strong>Maasai Bead Artists</strong> - Kenya & Tanzania</li>
+                        <li><strong>Wood Carvers Guild</strong> - Mali & Burkina Faso</li>
+                        <li><strong>Metalwork Masters</strong> - Morocco & Ethiopia</li>
+                    </ul>
+
+                    <h4>Cultural Significance</h4>
+                    <p>Each piece in our collection carries cultural meaning and historical significance. We provide information about the symbolism and traditional use of every item.</p>
+                </div>
+            </div>
+
+            <!-- Sizing & Dimensions -->
+            <div class="faq-section">
+                <div class="faq-header" onclick="toggleFAQ(this)">
+                    <span>Sizing & Specifications</span>
+                    <span>+</span>
+                </div>
+                <div class="faq-content">
+                    <h4>Size Variations</h4>
+                    <p>As handmade items, slight variations in size and appearance are normal and add to each piece's unique character. Dimensions provided are approximate.</p>
+
+                    <h4>Custom Sizes</h4>
+                    <p>Many of our artisan partners can create custom sizes for certain items. Contact us to discuss custom orders - additional time and costs may apply.</p>
+
+                    <h4>Weight Considerations</h4>
+                    <p>Some pieces, particularly masks and sculptures, may be heavier than expected due to traditional materials used. Weight information is provided where available.</p>
+                </div>
+            </div>
+
+            <!-- Payment & Security -->
+            <div class="faq-section">
+                <div class="faq-header" onclick="toggleFAQ(this)">
+                    <span>Payment & Security</span>
+                    <span>+</span>
+                </div>
+                <div class="faq-content">
+                    <h4>Accepted Payment Methods</h4>
+                    <ul>
+                        <li>All major credit and debit cards</li>
+                        <li>PayPal</li>
+                        <li>Apple Pay</li>
+                        <li>Google Pay</li>
+                        <li>Bank transfer (for large orders)</li>
+                    </ul>
+
+                    <h4>Security</h4>
+                    <p>Your payment information is secure. We use SSL encryption and work with trusted payment processors to protect your financial data.</p>
+
+                    <h4>Currency</h4>
+                    <p>All prices are displayed in GBP (£). International customers may see approximate conversions, but final charges will be in GBP.</p>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
 
-
-<section class="recommendations">
-    <h2>You may also like</h2>
-    <div class="recommendations-grid">
-        <div class="rec-product">
-            <img src="https://picsum.photos/seed/frame2/400/400" alt="Azizi 5x7 Hanging Frame"/>
-            <h3>Azizi 5″ x 7″ Hanging Frame</h3>
-            <div class="price">$19.95</div>
+        <!-- Contact Section -->
+        <div class="contact-section">
+            <h3>Still Have Questions?</h3>
+            <p>We're here to help! Contact our team for personalized assistance.</p>
+            <p>
+                <strong>Email:</strong> <a href="mailto:hello@afromyth.com">hello@afromyth.com</a><br>
+                <strong>Phone:</strong> <a href="tel:+442071234567">+44 20 7123 4567</a>
+            </p>
+            <p>Response time: Within 24 hours (Monday-Friday)</p>
         </div>
-        <div class="rec-product">
-            <img src="https://picsum.photos/seed/frame3/400/400" alt="Azizi 4x6 Hanging Frame"/>
-            <h3>Azizi 4″ x 6″ Hanging Frame</h3>
-            <div class="price">$17.95</div>
-        </div>
-        <div class="rec-product">
-            <img src="https://picsum.photos/seed/frame4/400/400" alt="Sahra Photo Frame"/>
-            <h3>Sahra Photo Frame 5x7 Antique Gold</h3>
-            <div class="price">$24.95</div>
-        </div>
-    </div>
-</section>
-
-<script>
-    function increaseQty() {
-        const input = document.getElementById('quantity');
-        input.value = parseInt(input.value) + 1;
-    }
-
-    function decreaseQty() {
-        const input = document.getElementById('quantity');
-        if (parseInt(input.value) > 1) {
-            input.value = parseInt(input.value) - 1;
-        }
-    }
-
-    function addToCart() {
-        const quantity = document.getElementById('quantity').value;
-        alert(`Added ${quantity} (s) to cart!`);
-    }
-
-    function toggleDeliveryReturns(header) {
-        const content = header.nextElementSibling;
-        const symbol = header.querySelector('span:last-child');
-        
-        content.classList.toggle('open');
-        header.classList.toggle('active');
-        
-        if (content.classList.contains('open')) {
-            symbol.textContent = '×';
-        } else {
-            symbol.textContent = '+';
-        }
-    }
-
-    
-    document.querySelectorAll('.gallery-img').forEach(img => {
-        img.addEventListener('click', function() {
-            console.log('Gallery image clicked:', this.alt);
-        });
-    });
-</script>
-
     </main>
-    <footer class="bg-white text-gray-700 footer-padding">
-    <div class="border-t-2 border-gray-200"></div>
-    <div class="footer-inner">
-        <div class="py-10">
-            
-            <div class="flex flex-col md:flex-row md:items-center md:justify-between space-y-4 md:space-y-0 mb-8">
-                
-                <div class="flex-shrink-0">
-                    <h2 class="font-bold uppercase tracking-widest text-sm">
-                        <span class="rammetto-font font-normal lowercase tracking-normal" style="color:#000;font-size:1.04rem">afromyth.</span> – THE LONG THREAD HOME.
-                    </h2>
-                </div>
-                
-                <div class="flex-shrink-0">
-                    <nav class="flex justify-start md:justify-end">
-                        <div class="flex flex-col sm:flex-row sm:items-center sm:space-x-3 space-y-2 sm:space-y-0" style="font-family:var(--font-nav);font-size:.74rem;font-weight:400;text-transform:uppercase;letter-spacing:.11em;color:#666">
-                            <a href="/help-faq.html" class="hover:underline" style="color:#666;text-decoration:none;position:relative;padding-bottom:4px;transition:opacity .2s ease">HELP & FAQ</a>
-                            <span class="hidden sm:inline text-gray-400">|</span>
-                            <a href="/about-us.html" class="hover:underline" style="color:#666;text-decoration:none;position:relative;padding-bottom:4px;transition:opacity .2s ease">ABOUT US</a>
-                            <span class="hidden sm:inline text-gray-400">|</span>
-                            <a href="/contact-us.html" class="hover:underline" style="color:#666;text-decoration:none;position:relative;padding-bottom:4px;transition:opacity .2s ease">CONTACT US</a>
-                            <span class="hidden sm:inline text-gray-400">|</span>
-                            <a href="/terms-and-conditions.html" class="hover:underline" style="color:#666;text-decoration:none;position:relative;padding-bottom:4px;transition:opacity .2s ease">TERMS & CONDITIONS</a>
-                            <span class="hidden sm:inline text-gray-400">|</span>
-                            <a href="/privacy-policy.html" class="hover:underline" style="color:#666;text-decoration:none;position:relative;padding-bottom:4px;transition:opacity .2s ease">PRIVACY POLICY</a>
-                        </div>
-                    </nav>
-                </div>
-            </div>
-            
-            <div class="flex justify-start lg:justify-end lg:pr-10 mb-6">
-                <div class="flex items-center">
-                    <img src="/images/payments/payments-50.png" alt="Payment Methods" class="h-12">
-                </div>
-            </div>
-            
-            <div class="flex justify-center">
-                <div class="text-gray-500" style="font-size:.975rem">
-                    <span>© 2025 AFROMYTH</span>
-                </div>
-            </div>
-        </div>
-    </div>
-</footer>
 
-<script>
-    function toggleCategoryMenu() {
-        const dropdown = document.getElementById("catDropdown");
-        dropdown.classList.toggle("show");
-    }
-    
-    document.addEventListener("click", function(event) {
-        const categoryMenu = document.querySelector(".category-menu");
-        if (categoryMenu && !categoryMenu.contains(event.target)) {
-            document.getElementById("catDropdown").classList.remove("show");
+    <!-- JavaScript for Accordion Functionality -->
+    <script>
+        function toggleFAQ(header) {
+            const content = header.nextElementSibling;
+            const symbol = header.querySelector('span:last-child');
+            
+            // Close all other accordions
+            const allHeaders = document.querySelectorAll('.faq-header');
+            const allContents = document.querySelectorAll('.faq-content');
+            
+            allHeaders.forEach(h => {
+                if (h !== header) {
+                    h.classList.remove('active');
+                    h.querySelector('span:last-child').textContent = '+';
+                }
+            });
+            
+            allContents.forEach(c => {
+                if (c !== content) {
+                    c.classList.remove('open');
+                }
+            });
+            
+            // Toggle current accordion
+            header.classList.toggle('active');
+            content.classList.toggle('open');
+            
+            if (content.classList.contains('open')) {
+                symbol.textContent = '×';
+            } else {
+                symbol.textContent = '+';
+            }
         }
-    });
-    
-    document.addEventListener("keydown", function(event) {
-        if (event.key === "Escape") {
-            document.getElementById("catDropdown").classList.remove("show");
-            document.getElementById("searchBar").style.display = "none";
-        }
-    });
-    
-    function toggleSearch() {
-        const searchBar = document.getElementById("searchBar");
-        if (searchBar.style.display === "none" || searchBar.style.display === "") {
-            searchBar.style.display = "block";
-            const input = searchBar.querySelector("input");
-            if (input) input.focus();
-        } else {
-            searchBar.style.display = "none";
-        }
-    }
-</script>
 
+        // Optional: Close accordion when clicking outside
+        document.addEventListener('click', function(event) {
+            if (!event.target.closest('.faq-section')) {
+                const allHeaders = document.querySelectorAll('.faq-header');
+                const allContents = document.querySelectorAll('.faq-content');
+                
+                allHeaders.forEach(h => {
+                    h.classList.remove('active');
+                    h.querySelector('span:last-child').textContent = '+';
+                });
+                
+                allContents.forEach(c => {
+                    c.classList.remove('open');
+                });
+            }
+        });
+    </script>
 </body>
 </html>

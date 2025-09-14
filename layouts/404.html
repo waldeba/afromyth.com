@@ -1,0 +1,64 @@
+{{ define "main" }}
+<div style="max-width: 800px; margin: 0 auto; padding: 5rem 1rem; text-align: center;">
+  <div style="margin-bottom: 3rem;">
+    <h1 style="font-family: var(--font-nav); font-size: 8rem; font-weight: 700; color: var(--logo-color); margin-bottom: 1rem; line-height: 1;">404</h1>
+    <h2 style="font-family: var(--font-nav); font-size: 2rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 2rem; color: var(--color-dark);">Page Not Found</h2>
+    <p style="color: #666; font-size: 1.2rem; line-height: 1.6; margin-bottom: 3rem;">
+      Sorry, the page you're looking for doesn't exist or has been moved.
+    </p>
+  </div>
+  
+  <div style="margin-bottom: 4rem;">
+    <a href="{{ .Site.BaseURL }}" style="background: var(--color-dark); color: #fff; padding: 1rem 2rem; border-radius: 6px; text-decoration: none; font-family: var(--font-nav); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; transition: all 0.3s ease; display: inline-block;">
+      Return to Home
+    </a>
+  </div>
+  
+  <div style="border-top: 1px solid #e5e5e5; padding-top: 3rem;">
+    <h3 style="font-family: var(--font-nav); font-weight: 600; margin-bottom: 2rem; color: var(--color-dark);">Explore Our Collections</h3>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; max-width: 600px; margin: 0 auto;">
+      <a href="{{ "masks-statues-carvings/" | relURL }}" style="border: 1px solid #e5e5e5; border-radius: 8px; padding: 1.5rem; text-decoration: none; color: var(--color-dark); transition: all 0.2s ease; display: block;">
+        <h4 style="font-family: var(--font-nav); font-weight: 600; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem;">Masks + Statues</h4>
+        <p style="color: #666; font-size: 0.85rem;">Sacred carvings and sculptures</p>
+      </a>
+      
+      <a href="{{ "ethiopian-orthodox-crosses/" | relURL }}" style="border: 1px solid #e5e5e5; border-radius: 8px; padding: 1.5rem; text-decoration: none; color: var(--color-dark); transition: all 0.2s ease; display: block;">
+        <h4 style="font-family: var(--font-nav); font-weight: 600; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem;">Orthodox Crosses</h4>
+        <p style="color: #666; font-size: 0.85rem;">Sacred Ethiopian artifacts</p>
+      </a>
+      
+      <a href="{{ "apparel-textiles-jewelry/" | relURL }}" style="border: 1px solid #e5e5e5; border-radius: 8px; padding: 1.5rem; text-decoration: none; color: var(--color-dark); transition: all 0.2s ease; display: block;">
+        <h4 style="font-family: var(--font-nav); font-weight: 600; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem;">Textiles + Jewelry</h4>
+        <p style="color: #666; font-size: 0.85rem;">Traditional craftsmanship</p>
+      </a>
+      
+      <a href="{{ "books-icons-manuscripts/" | relURL }}" style="border: 1px solid #e5e5e5; border-radius: 8px; padding: 1.5rem; text-decoration: none; color: var(--color-dark); transition: all 0.2s ease; display: block;">
+        <h4 style="font-family: var(--font-nav); font-weight: 600; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem;">Books + Manuscripts</h4>
+        <p style="color: #666; font-size: 0.85rem;">Ancient written heritage</p>
+      </a>
+      
+      <a href="{{ "tokens-medals-pins/" | relURL }}" style="border: 1px solid #e5e5e5; border-radius: 8px; padding: 1.5rem; text-decoration: none; color: var(--color-dark); transition: all 0.2s ease; display: block;">
+        <h4 style="font-family: var(--font-nav); font-weight: 600; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem;">Tokens + Medals</h4>
+        <p style="color: #666; font-size: 0.85rem;">Royal regalia and symbols</p>
+      </a>
+    </div>
+  </div>
+</div>
+
+<style>
+a[href*="/masks-statues-carvings/"]:hover,
+a[href*="/ethiopian-orthodox-crosses/"]:hover,
+a[href*="/apparel-textiles-jewelry/"]:hover,
+a[href*="/books-icons-manuscripts/"]:hover,
+a[href*="/tokens-medals-pins/"]:hover {
+  border-color: var(--logo-color);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(184, 115, 51, 0.15);
+}
+
+a[style*="background: var(--color-dark)"]:hover {
+  background: var(--logo-color) !important;
+  transform: translateY(-2px);
+}
+</style>
+{{ end }}

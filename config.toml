@@ -1,0 +1,40 @@
+baseURL = 'http://localhost:1313'
+languageCode = 'en-us'
+title = 'AFROMYTH'
+
+[params]
+  description = "AFROMYTH - THE LONG THREAD HOME"
+  author = "AFROMYTH"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+[permalinks]
+  products = "/products/:slug/"
+
+[[menu.main]]
+  name = "MASKS + STATUES + CARVINGS"
+  url = "/masks-statues-carvings/"
+  weight = 1
+
+[[menu.main]]
+  name = "FRAMES + PHOTOS + MIRRORS"
+  url = "/frames-photos-mirrors/"
+  weight = 2
+
+[[menu.main]]
+  name = "BASKETS + BAGS + BOXES"
+  url = "/baskets-bags-boxes/"
+  weight = 3
+
+[[menu.main]]
+  name = "JEWELLERY + COINS + ODDITIES"
+  url = "/jewellery-coins-oddities/"
+  weight = 4
+
+[[menu.main]]
+  name = "HATS + HOES + TOOLS + CLOTH"
+  url = "/hats-hoes-tools-cloth/"
+  weight = 5

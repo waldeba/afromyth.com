@@ -1,0 +1,79 @@
+<script>
+function addToCart(button) {
+  event.stopPropagation();
+  
+  const pin = button.closest('.pinterest-pin');
+  const title = pin.querySelector('.pin-title').textContent;
+  const price = pin.querySelector('.pin-price').textContent;
+  const isAdded = button.classList.contains('added');
+  
+  if (isAdded) {
+    button.classList.remove('added');
+    button.innerHTML = `
+      <span class="cart-plus">+</span>
+      Add to cart
+    `;
+    console.log('Removed from cart:', title, price);
+  } else {
+    button.classList.add('added');
+    button.innerHTML = `
+      <span class="cart-plus">✓</span>
+      Added to cart
+    `;
+    console.log('Added to cart:', title, price);
+  }
+}
+
+function toggleCategoryMenu() {
+  const dropdown = document.getElementById('catDropdown');
+  dropdown.classList.toggle('show');
+}
+
+document.addEventListener('click', function(event) {
+  const categoryMenu = document.querySelector('.category-menu');
+  if (categoryMenu && !categoryMenu.contains(event.target)) {
+    document.getElementById('catDropdown').classList.remove('show');
+  }
+});
+
+document.addEventListener('keydown', function(event) {
+  if (event.key === 'Escape') {
+    document.getElementById('catDropdown').classList.remove('show');
+    document.getElementById('searchBar').style.display = 'none';
+  }
+});
+
+function toggleSearch() {
+  const searchBar = document.getElementById('searchBar');
+  searchBar.style.display = searchBar.style.display === 'none' ? 'block' : 'none';
+  
+  if (searchBar.style.display === 'block') {
+    const input = searchBar.querySelector('input');
+    if (input) input.focus();
+  }
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Handle pin click events
+  const pins = document.querySelectorAll('.pinterest-pin');
+  pins.forEach(pin => {
+    const link = pin.querySelector('.pin-link');
+    if (link) {
+      pin.addEventListener('click', function(event) {
+        // Don't navigate if clicking on cart buttons
+        if (!event.target.closest('.pin-actions button')) {
+          window.location.href = link.href;
+        }
+      });
+      
+      // Prevent event bubbling for buttons
+      const buttons = pin.querySelectorAll('.pin-actions button');
+      buttons.forEach(button => {
+        button.addEventListener('click', function(event) {
+          event.stopPropagation();
+        });
+      });
+    }
+  });
+});
+</script>
