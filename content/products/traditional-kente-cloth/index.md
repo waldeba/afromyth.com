@@ -2,7 +2,7 @@
 title: "Traditional Kente Cloth"
 date: 2024-12-19T15:00:00-05:00
 draft: false
-price: "$125.00"
+price: 125.00
 images:
   - "kente-main.jpg"
   - "kente-pattern.jpg"

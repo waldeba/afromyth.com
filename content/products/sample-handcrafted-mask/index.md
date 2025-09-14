@@ -2,7 +2,7 @@
 title: "Handcrafted African Ceremonial Mask"
 date: 2025-09-14T02:59:15+03:00
 draft: false
-price: "$149.00"
+price: 149.00
 images:
   - "mask-front.jpg"
   - "mask-side.jpg"

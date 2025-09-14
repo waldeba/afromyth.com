@@ -5,6 +5,7 @@ title: 'AFROMYTH'
 params:
   description: "AFROMYTH - THE LONG THREAD HOME"
   author: "AFROMYTH"
+  currency: "GBP"
 
 markup:
   goldmark:

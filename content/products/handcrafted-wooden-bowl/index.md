@@ -2,7 +2,7 @@
 title: "Handcrafted Wooden Bowl"
 date: 2024-12-19T14:58:00-05:00
 draft: false
-price: "$45.50"
+price: 45.50
 images:
   - "bowl-main.jpg"
 category: "home-decor"

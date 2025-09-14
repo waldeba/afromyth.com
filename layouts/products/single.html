@@ -24,7 +24,9 @@
     
     <h2>{{ .Title }}</h2>
     
-    <div class="price">{{ .Params.price | default "$99.00" }}</div>
+    {{ $cur := .Params.currency | default (site.Params.currency | default "GBP") }}
+    {{ $sym := cond (eq (upper $cur) "GBP") "£" (cond (eq (upper $cur) "EUR") "€" "$") }}
+    {{ with .Params.price }}<div class="price">{{ $sym }}{{ printf "%.2f" (float .) }}</div>{{ end }}
     
     {{ if .Params.inStock }}
       <div class="stock-status">✓ In Stock</div>
@@ -114,7 +116,9 @@
           <div class="placeholder-img">{{ .Title }}</div>
         {{ end }}
         <h3>{{ .Title }}</h3>
-        <div class="price">{{ .Params.price | default "$99.00" }}</div>
+        {{ $cur := .Params.currency | default (site.Params.currency | default "GBP") }}
+        {{ $sym := cond (eq (upper $cur) "GBP") "£" (cond (eq (upper $cur) "EUR") "€" "$") }}
+        {{ with .Params.price }}<div class="price">{{ $sym }}{{ printf "%.2f" (float .) }}</div>{{ end }}
       </div>
     {{ end }}
   </div>

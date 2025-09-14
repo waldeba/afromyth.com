@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Search on AFROMYTH</title>
-    <link>http://localhost:1414/afromyth.com/search/</link>
+    <link>http://localhost:1313/afromyth.com/search/</link>
     <description>Recent content in Search on AFROMYTH</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <atom:link href="http://localhost:1414/afromyth.com/search/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/afromyth.com/search/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

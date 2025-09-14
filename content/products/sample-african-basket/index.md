@@ -2,7 +2,7 @@
 title: "Sample African Basket"
 date: 2024-12-19T14:56:18-05:00
 draft: false
-price: "$89.99"
+price: 89.99
 images:
   - "basket-main.jpg"
   - "basket-detail.jpg"
