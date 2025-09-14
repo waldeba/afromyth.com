@@ -62,6 +62,15 @@
       </div>
       {{ end }}
     </div>
+    <!-- Show product details only once below main info -->
+    <div class="product-details">
+      <div class="detail-section">
+        <strong>SKU:</strong> {{ .Params.sku }}<br>
+        <strong>Dimensions:</strong> {{ .Params.dimensions }}<br>
+        <strong>Material:</strong> {{ .Params.material }}<br>
+        <strong>Colour:</strong> {{ .Params.colour }}
+      </div>
+    </div>
   </div>
 </div>
 {{ $currentSection := .Section }}
