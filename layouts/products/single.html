@@ -1,92 +1,25 @@
 {{ define "main" }}
-<div class="page">
+<div class="product-page">
   <div class="gallery">
-    {{ if .Params.images }}
-      {{ range .Params.images }}
-        {{ $imagePath := printf "/images/%s" . }}
-        {{ if fileExists (printf "static%s" $imagePath) }}
-          <img src="{{ $imagePath }}" alt="{{ $.Title }}" class="gallery-img">
-        {{ else }}
-          <div class="placeholder-img">{{ $.Title }}</div>
+    <div class="gallery-images">
+      {{ if .Params.images }}
+        {{ range .Params.images }}
+          <img src="{{ printf "/images/%s" . }}" alt="{{ $.Title }}" class="gallery-img" />
         {{ end }}
-      {{ end }}
-    {{ else }}
-      <div class="placeholder-img">{{ .Title }}</div>
-    {{ end }}
-  </div>
-  
-  <div class="info">
-    <div class="breadcrumb">
-      <a href="{{ "/" | relURL }}">Home</a> / 
-      <a href="{{ .Section | relURL }}/">{{ .Section | title }}</a> / 
-      {{ .Title }}
-    </div>
-    
-    <h2>{{ .Title }}</h2>
-    
-    {{ $cur := .Params.currency | default (site.Params.currency | default "GBP") }}
-    {{ $sym := cond (eq (upper $cur) "GBP") "£" (cond (eq (upper $cur) "EUR") "€" "$") }}
-    {{ with .Params.price }}<div class="price">{{ $sym }}{{ printf "%.2f" (float .) }}</div>{{ end }}
-    
-    {{ if .Params.inStock }}
-      <div class="stock-status">✓ In Stock</div>
-    {{ else }}
-      <div class="stock-status" style="color: #dc3545;">Out of Stock</div>
-    {{ end }}
-    
-    <div class="qty">
-      <button type="button" class="qty-minus">−</button>
-      <span>1</span>
-      <button type="button" class="qty-plus">+</button>
-    </div>
-    
-    {{ if .Params.inStock }}
-      <button class="add-to-cart">Add to Cart</button>
-    {{ else }}
-      <button class="add-to-cart" disabled style="opacity: 0.5; cursor: not-allowed;">Out of Stock</button>
-    {{ end }}
-    
-    <div class="section">
-      <h3>Description</h3>
-      <div class="content">
-        {{ .Content }}
-      </div>
-    </div>
-    
-    {{ if .Params.specifications }}
-    <div class="section">
-      <h3>Specifications</h3>
-      <ul>
-        {{ range .Params.specifications }}
-          <li>{{ . }}</li>
-        {{ end }}
-      </ul>
-    </div>
-    {{ end }}
-    
-    <div class="meta">
-      {{ if .Params.category }}
-        <div><strong>Category:</strong> {{ .Params.category | title }}</div>
-      {{ end }}
-      {{ if .Params.tags }}
-        <div><strong>Tags:</strong> {{ delimit .Params.tags ", " }}</div>
-      {{ end }}
-      {{ if .Params.weight }}
-        <div><strong>Weight:</strong> {{ .Params.weight }}</div>
+      {{ else }}
+        <div class="placeholder-img">{{ .Title }}</div>
       {{ end }}
     </div>
-    
     <div class="delivery-returns">
-      <div class="delivery-returns-header">
-        Delivery & Returns
-        <span class="arrow">▼</span>
+      <div class="delivery-returns-header" onclick="toggleDeliveryReturns(this)">
+        <span>DELIVERY & RETURN</span>
+        <span>+</span>
       </div>
       <div class="delivery-returns-content">
         <h4>Delivery Information</h4>
         <p>Standard delivery: 3-5 business days</p>
         <p>Express delivery: 1-2 business days</p>
-        <p>Free delivery on orders over $100</p>
-        
+        <p>Free delivery on orders over £100</p>
         <h4>Returns Policy</h4>
         <p>30-day return policy</p>
         <p>Items must be in original condition</p>
@@ -94,24 +27,54 @@
       </div>
     </div>
   </div>
+  <div class="product-info">
+    <div class="sku">SKU: {{ .Params.sku }} | HANDCRAFTED BY ARTISANS</div>
+    <h1 class="product-title">{{ .Title }}</h1>
+    {{ $cur := .Params.currency | default (site.Params.currency | default "GBP") }}
+    {{ $sym := cond (eq (upper $cur) "GBP") "£" (cond (eq (upper $cur) "EUR") "€" "$") }}
+    {{ with .Params.price }}<div class="price">{{ $sym }}{{ printf "%.2f" (float .) }}</div>{{ end }}
+    {{ if .Params.inStock }}
+      <div class="stock-status">✓ In Stock</div>
+    {{ else }}
+      <div class="stock-status" style="color: #dc3545;">Out of Stock</div>
+    {{ end }}
+    <div class="qty-selector">
+      <label for="quantity">Quantity:</label>
+      <div class="qty-controls">
+        <button class="qty-btn" onclick="decreaseQty()">−</button>
+        <input type="number" id="quantity" class="qty-input" value="1" min="1">
+        <button class="qty-btn" onclick="increaseQty()">+</button>
+      </div>
+    </div>
+    <button class="add-to-cart" onclick="addToCart()">Add to Cart</button>
+    <div class="product-details">
+      <div class="detail-section">
+        <p>{{ .Params.description }}</p>
+      </div>
+      {{ if .Params.specifications }}
+      <div class="detail-section">
+        <h3>Details you'll appreciate</h3>
+        <ul>
+          {{ range .Params.specifications }}
+            <li>{{ . }}</li>
+          {{ end }}
+        </ul>
+      </div>
+      {{ end }}
+    </div>
+  </div>
 </div>
-
 {{ $currentSection := .Section }}
 {{ $currentTitle := .Title }}
 {{ $relatedProducts := where (where .Site.RegularPages "Section" $currentSection) "Title" "!=" $currentTitle }}
 {{ if $relatedProducts }}
-<div class="recommendations">
-  <h2>You May Also Like</h2>
+<section class="recommendations">
+  <h2>You may also like</h2>
   <div class="recommendations-grid">
-    {{ range first 4 $relatedProducts }}
-      <div class="rec-product" onclick="window.location.href='{{ .Permalink }}'">
+    {{ range first 3 $relatedProducts }}
+      <div class="rec-product">
         {{ if .Params.images }}
-          {{ $imagePath := printf "/images/%s" (index .Params.images 0) }}
-          {{ if fileExists (printf "static%s" $imagePath) }}
-            <img src="{{ $imagePath }}" alt="{{ .Title }}">
-          {{ else }}
-            <div class="placeholder-img">{{ .Title }}</div>
-          {{ end }}
+          <img src="{{ printf "/images/%s" (index .Params.images 0) }}" alt="{{ .Title }}" />
         {{ else }}
           <div class="placeholder-img">{{ .Title }}</div>
         {{ end }}
@@ -122,6 +85,29 @@
       </div>
     {{ end }}
   </div>
-</div>
+</section>
 {{ end }}
+<script>
+function increaseQty() {
+  var input = document.getElementById('quantity');
+  input.value = parseInt(input.value) + 1;
+}
+function decreaseQty() {
+  var input = document.getElementById('quantity');
+  if (parseInt(input.value) > 1) {
+    input.value = parseInt(input.value) - 1;
+  }
+}
+function addToCart() {
+  var quantity = document.getElementById('quantity').value;
+  alert(`Added ${quantity} {{ .Title }}(s) to cart!`);
+}
+function toggleDeliveryReturns(header) {
+  var content = header.nextElementSibling;
+  var symbol = header.querySelector('span:last-child');
+  content.classList.toggle('open');
+  header.classList.toggle('active');
+  symbol.textContent = content.classList.contains('open') ? '×' : '+';
+}
+</script>
 {{ end }}
